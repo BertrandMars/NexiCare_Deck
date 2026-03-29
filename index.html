@@ -1316,8 +1316,27 @@ em{font-style:italic;}
     display: flex !important;
   }
 
-  /* Print btn */
-  .print-btn { bottom: 16px; right: 16px; padding: 10px 16px; font-size: 12px; }
+  /* Print btn — remonté au dessus de la barre nav */
+  .print-btn { bottom: 52px !important; right: 16px; padding: 10px 16px; font-size: 12px; }
+
+  /* Masquer les labels absolus qui chevauchent le contenu */
+  .slide-label { display: none !important; }
+  .confidential-badge { display: none !important; }
+
+  /* Numéro de slide : fixe en bas à gauche, discret */
+  .slide-num {
+    position: fixed !important;
+    bottom: 14px !important;
+    left: 16px !important;
+    right: auto !important;
+    font-size: 10px !important;
+    color: rgba(255,255,255,.3) !important;
+    z-index: 997;
+  }
+
+  /* Padding haut suffisant pour ne pas coller au bord */
+  .slide { padding-top: 32px !important; }
+  #s01   { padding-top: 0 !important; }
 }
 
 /* Hint scroll mobile */
@@ -2233,4 +2252,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 </body>
-</html>
+  </html>
