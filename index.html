@@ -1217,12 +1217,32 @@ em{font-style:italic;}
   .team-name { font-size: 20px !important; }
   .cover-title { font-size: 34px !important; }
 
-  /* Tableau concurrence → scroll horizontal */
-  #s10 { padding: 28px 16px; }
-  .concurrence-table { font-size: 11px; }
-  .ct th, .ct td { padding: 8px 10px !important; }
-  .ct th:nth-child(2), .ct td:nth-child(2),
-  .ct th:nth-child(3), .ct td:nth-child(3) { display: none; }
+  /* Tableau concurrence → scroll horizontal sur mobile */
+  #s10 { padding: 28px 12px; }
+  #s10 .concurrence-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 11px;
+    white-space: nowrap;
+    border-radius: 10px;
+  }
+  .ct th, .ct td { padding: 8px 10px !important; font-size: 10px !important; }
+  .ct th:first-child, .ct td:first-child {
+    min-width: 130px;
+    white-space: normal;
+    font-size: 10px !important;
+  }
+  /* Petit indicateur scroll */
+  #s10::after {
+    content: '← Faites défiler →';
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: rgba(255,255,255,.35);
+    margin-top: 8px;
+    letter-spacing: .05em;
+  }
 
   /* Chart */
   .chart-area { padding: 14px !important; }
