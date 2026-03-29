@@ -863,17 +863,122 @@ em{font-style:italic;}
 .cf2-role{font-size:11px;color:rgba(255,255,255,.4);line-height:1.4;}
 
 /* ── PRINT ─────────────────────────────────────────────────────── */
-@media print{
-  body{background:#fff;}
-  .slide{
-    min-height:0;
-    height:297mm;
-    page-break-after:always;
-    padding:40px 50px;
+* {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+@media print {
+  html {
+    width: 297mm;
+    height: 210mm;
   }
-  #s01{height:297mm;}
-  .slide-num{color:#999;}
-  .confidential-badge{color:#999;border-color:#ccc;}
+  body {
+    width: 297mm;
+    background: #0a0f1a !important;
+    margin: 0;
+    padding: 0;
+  }
+  .print-btn { display: none !important; }
+
+  .slide {
+    position: relative;
+    width: 297mm !important;
+    height: 210mm !important;
+    min-height: 0 !important;
+    max-height: 210mm !important;
+    padding: 32px 48px !important;
+    overflow: hidden !important;
+    page-break-after: always !important;
+    page-break-inside: avoid !important;
+    break-after: page !important;
+    break-inside: avoid !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Cover : grille spéciale */
+  #s01 {
+    padding: 0 !important;
+    background: var(--navy-d) !important;
+  }
+  .cover-inner {
+    width: 100% !important;
+    height: 210mm !important;
+    min-height: 0 !important;
+    display: grid !important;
+    grid-template-rows: 1fr auto !important;
+  }
+  .cover-left { padding: 40px 44px 24px !important; }
+  .cover-right { padding: 30px 24px 24px 0 !important; }
+  .cover-title { font-size: 42px !important; line-height: 1.05 !important; margin-bottom: 14px !important; }
+  .cover-sub { font-size: 13px !important; margin-bottom: 24px !important; }
+  .cover-founders { padding: 16px 44px !important; }
+
+  /* Réduire tailles de police pour faire tenir */
+  .display { font-size: 28px !important; line-height: 1.1 !important; margin-bottom: 8px !important; }
+  .problem-stat { font-size: 72px !important; }
+  .section-title { font-size: 28px !important; }
+  .team-name { font-size: 20px !important; }
+  .contact-title { font-size: 38px !important; }
+
+  /* Réduire marges et gaps pour tenir sur la page */
+  .problem-grid,
+  .solution-grid,
+  .market-grid,
+  .eco-grid,
+  .traction-grid,
+  .bp-grid,
+  .invest-grid,
+  .funds-grid { margin-top: 16px !important; gap: 32px !important; }
+
+  .team-grid { margin-top: 16px !important; gap: 16px !important; }
+  .team-card { padding: 20px !important; }
+  .team-bio { font-size: 11px !important; margin-bottom: 12px !important; }
+  .team-contribution { margin-top: 12px !important; padding: 14px 20px !important; }
+
+  .timing-grid { margin-top: 20px !important; gap: 16px !important; }
+  .timing-card { padding: 20px !important; }
+  .timing-year { font-size: 32px !important; }
+
+  .product-grid { margin-top: 20px !important; gap: 10px !important; }
+  .product-card { padding: 14px !important; }
+
+  .verbatim-item { padding: 10px 14px !important; }
+  .verbatim-text { font-size: 12px !important; }
+
+  .bp-kpi { padding: 10px 14px !important; }
+  .bp-kpi-val { font-size: 16px !important; }
+  .chart-area { padding: 16px !important; }
+  .chart-bars { height: 80px !important; }
+  .annual-table td, .annual-table th { padding: 4px 8px !important; font-size: 11px !important; }
+
+  .inv-card { padding: 10px 14px !important; }
+  .inv-val { font-size: 16px !important; }
+
+  .next-steps { margin-bottom: 24px !important; gap: 14px !important; }
+  .ns-item { padding: 14px 16px !important; width: 140px !important; }
+  .ns-num { font-size: 24px !important; }
+  .contact-ctas { margin-bottom: 24px !important; }
+  .contact-sub { margin-bottom: 24px !important; }
+
+  .concurrence-table { margin-top: 20px !important; }
+  .ct th, .ct td { padding: 9px 12px !important; font-size: 11px !important; }
+
+  .eco-kpi { padding: 18px !important; }
+  .eki-val { font-size: 14px !important; }
+
+  /* Masquer le numéro de slide et badge en print */
+  .slide-num { display: none !important; }
+  .confidential-badge { font-size: 8px !important; }
 }
 
 /* ── PRINT BUTTON ──────────────────────────────────────────────── */
