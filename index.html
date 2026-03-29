@@ -33,7 +33,7 @@ body{
   flex-direction:column;
   justify-content:center;
   position:relative;
-  overflow:visible;
+  overflow:hidden;
   padding:60px 80px;
 }
 .slide-num{
@@ -905,6 +905,7 @@ em{font-style:italic;}
     justify-content: flex-start !important;
   }
 
+  /* Cover : grille spéciale */
   #s01 {
     padding: 0 !important;
     background: var(--navy-d) !important;
@@ -922,12 +923,14 @@ em{font-style:italic;}
   .cover-sub { font-size: 13px !important; margin-bottom: 24px !important; }
   .cover-founders { padding: 16px 44px !important; }
 
+  /* Réduire tailles de police pour faire tenir */
   .display { font-size: 28px !important; line-height: 1.1 !important; margin-bottom: 8px !important; }
   .problem-stat { font-size: 72px !important; }
   .section-title { font-size: 28px !important; }
   .team-name { font-size: 20px !important; }
   .contact-title { font-size: 38px !important; }
 
+  /* Réduire marges et gaps pour tenir sur la page */
   .problem-grid,
   .solution-grid,
   .market-grid,
@@ -973,6 +976,7 @@ em{font-style:italic;}
   .eco-kpi { padding: 18px !important; }
   .eki-val { font-size: 14px !important; }
 
+  /* Masquer le numéro de slide et badge en print */
   .slide-num { display: none !important; }
   .confidential-badge { font-size: 8px !important; }
 }
@@ -1052,300 +1056,135 @@ em{font-style:italic;}
 .lead-success2-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:900; color:var(--dark); margin-bottom:8px; }
 .lead-success2-sub { font-size:13px; color:var(--grey); line-height:1.6; }
 
-/* ── RESPONSIVE MOBILE / TABLETTE ───────────────────────────── */
-@media (max-width: 1100px) {
+
+/* ── RESPONSIVE MOBILE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
   .slide {
-    padding: 40px 28px;
+    padding: 32px 24px;
     min-height: auto;
-    overflow: visible;
+    scroll-snap-align: start;
+  }
+  body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
   }
 
-  .cover-inner,
+  /* Cover */
+  .cover-inner { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+  .cover-left { padding: 40px 24px 20px; }
+  .cover-right { display: none; }
+  .cover-title { font-size: 36px !important; }
+  .cover-sub { font-size: 14px !important; margin-bottom: 20px !important; }
+  .cover-founders { padding: 16px 24px; flex-direction: column; gap: 16px; }
+  .cf-sep { display: none; }
+  .cf-raise { margin-left: 0; text-align: left; }
+  .cf-raise-num { font-size: 22px; }
+
+  /* Grilles 2 colonnes → 1 colonne */
   .problem-grid,
   .solution-grid,
   .market-grid,
   .eco-grid,
   .traction-grid,
   .bp-grid,
-  .team-grid,
   .invest-grid,
-  .funds-grid {
-    grid-template-columns: 1fr !important;
-    gap: 28px !important;
+  .funds-grid,
+  .team-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+
+  /* Timing 3 colonnes → 1 */
+  .timing-grid { grid-template-columns: 1fr !important; margin-top: 24px !important; gap: 14px !important; }
+  .timing-card { padding: 20px !important; }
+  .timing-year { font-size: 32px !important; }
+
+  /* Produit 3 colonnes → 2 */
+  .product-grid { grid-template-columns: 1fr 1fr !important; margin-top: 20px !important; gap: 10px !important; }
+  .product-card { padding: 14px !important; }
+
+  /* Titres */
+  .display { font-size: 26px !important; }
+  .problem-stat { font-size: 64px !important; }
+  .contact-title { font-size: 32px !important; }
+  .team-name { font-size: 20px !important; }
+  .cover-title { font-size: 34px !important; }
+
+  /* Tableau concurrence → scroll horizontal */
+  #s10 { padding: 28px 16px; }
+  .concurrence-table { font-size: 11px; }
+  .ct th, .ct td { padding: 8px 10px !important; }
+  .ct th:nth-child(2), .ct td:nth-child(2),
+  .ct th:nth-child(3), .ct td:nth-child(3) { display: none; }
+
+  /* Chart */
+  .chart-area { padding: 14px !important; }
+  .chart-bars { height: 70px !important; }
+  .annual-table td, .annual-table th { font-size: 10px !important; padding: 4px 6px !important; }
+
+  /* KPIs */
+  .bp-kpis { gap: 10px !important; }
+  .bp-kpi { padding: 10px 14px !important; }
+  .bp-kpi-val { font-size: 15px !important; }
+
+  /* Investisseur */
+  .invest-mecanique { gap: 10px !important; }
+  .inv-card { padding: 10px 14px !important; }
+  .inv-val { font-size: 15px !important; }
+  .cap-table { padding: 16px !important; }
+  .roi-box { padding: 14px 16px !important; }
+
+  /* Contact */
+  .contact-ctas { flex-direction: column; gap: 10px; width: 100%; }
+  .cta-btn { width: 100%; text-align: center; }
+  .next-steps { flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .ns-item { width: 140px; }
+  .contact-founders { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .contact-founders > div[style*="width:1px"] { display: none; }
+
+  /* Team */
+  .team-card { padding: 22px !important; }
+  .team-bio { font-size: 12px !important; }
+  .team-contribution { padding: 16px !important; }
+  .tc-val { font-size: 24px !important; }
+
+  /* Marché */
+  .market-val { font-size: 36px !important; }
+  .seg-item { padding: 10px 12px !important; }
+
+  /* Eco */
+  .eco-kpi { padding: 16px !important; }
+
+  /* Traction */
+  .credibility-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Funds */
+  .donut-visual { width: 160px !important; height: 160px !important; }
+  .donut-hole { width: 88px !important; height: 88px !important; }
+  .donut-total { font-size: 18px !important; }
+
+  /* Barre nav info mobile */
+  .mobile-nav-hint {
+    display: flex !important;
   }
 
-  .timing-grid,
-  .product-grid,
-  .credibility-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-
-  .cover-right,
-  .cover-left {
-    padding: 40px 28px;
-  }
-
-  .cover-founders,
-  .contact-founders,
-  .contact-ctas,
-  .next-steps {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-  }
-
-  .cf-sep,
-  .contact-founders > div[style*="width:1px"] {
-    display: none !important;
-  }
-
-  .cf-raise {
-    margin-left: 0;
-    text-align: left;
-  }
-
-  .ns-item {
-    width: 100%;
-  }
-
-  .cta-btn {
-    width: 100%;
-  }
-
-  .cover-title {
-    font-size: clamp(40px, 8vw, 56px);
-    line-height: 1.05;
-  }
-
-  .contact-title {
-    font-size: clamp(34px, 7vw, 52px);
-    line-height: 1.08;
-  }
-
-  .problem-stat {
-    font-size: clamp(54px, 11vw, 82px);
-  }
-
-  .market-val {
-    font-size: clamp(34px, 8vw, 48px);
-  }
-
-  .team-card,
-  .timing-card,
-  .chart-area,
-  .cap-table,
-  .eco-kpi {
-    padding: 20px;
-  }
-
-  .donut-visual {
-    width: 180px;
-    height: 180px;
-  }
-
-  .donut-hole {
-    width: 96px;
-    height: 96px;
-  }
-
-  .donut-total {
-    font-size: 18px;
-  }
-
-  .concurrence-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100%;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .ct {
-    min-width: 760px;
-  }
+  /* Print btn */
+  .print-btn { bottom: 16px; right: 16px; padding: 10px 16px; font-size: 12px; }
 }
 
-@media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .slide {
-    padding: 28px 16px;
-  }
-
-  .slide-label {
-    top: 16px;
-    left: 16px;
-    font-size: 9px;
-  }
-
-  .confidential-badge {
-    top: 16px;
-    right: 16px;
-    font-size: 8px;
-    padding: 3px 8px;
-  }
-
-  .slide-num {
-    right: 16px;
-    bottom: 14px;
-    font-size: 9px;
-  }
-
-  .cover-left,
-  .cover-right {
-    padding: 28px 16px;
-  }
-
-  .cover-sub,
-  .contact-sub,
-  .solution-desc,
-  .problem-stat-lbl,
-  .market-lbl,
-  .timing-desc,
-  .team-bio {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .display {
-    font-size: 32px !important;
-    line-height: 1.12 !important;
-  }
-
-  .solution-title {
-    font-size: 34px;
-  }
-
-  .cover-title {
-    font-size: 38px;
-  }
-
-  .contact-title {
-    font-size: 34px;
-  }
-
-  .cover-meta-item,
-  .verbatim-text,
-  .verbatim-author,
-  .pc-desc,
-  .ti-desc,
-  .cred-val,
-  .fr-type,
-  .roi-desc,
-  .lead-hdr-sub,
-  .lead-success2-sub {
-    font-size: 12px;
-  }
-
-  .product-card,
-  .timing-card,
-  .cred-card,
-  .fund-row,
-  .bp-kpi,
-  .inv-card {
-    padding: 16px;
-  }
-
-  .chart-bars {
-    height: 88px;
-    gap: 4px;
-  }
-
-  .annual-table th,
-  .annual-table td {
-    font-size: 10px;
-    padding: 6px 4px;
-  }
-
-  .lead-row2 {
-    grid-template-columns: 1fr;
-  }
-
-  .lead-box {
-    max-width: 100%;
-  }
-
-  .lead-hdr,
-  .lead-bdy {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
+/* Hint scroll mobile */
+.mobile-nav-hint {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(10,20,40,.95);
+  padding: 10px 16px;
+  z-index: 998;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(255,255,255,.5);
+  border-top: 1px solid rgba(255,255,255,.08);
 }
+.mobile-nav-hint span { color: rgba(255,255,255,.7); font-weight: 600; }
 
-@media (max-width: 480px) {
-  .slide {
-    padding: 24px 14px;
-  }
-
-  .cover-title {
-    font-size: 34px;
-  }
-
-  .contact-title {
-    font-size: 30px;
-  }
-
-  .display {
-    font-size: 28px !important;
-  }
-
-  .problem-stat {
-    font-size: 46px;
-  }
-
-  .market-val {
-    font-size: 32px;
-  }
-
-  .cover-logo-text,
-  .eyebrow,
-  .market-tag,
-  .chart-title,
-  .tc-title,
-  .roi-title,
-  .fr-source,
-  .lead-hdr-eye {
-    letter-spacing: .08em;
-  }
-
-  .cta-btn {
-    padding: 14px 18px;
-    font-size: 14px;
-  }
-
-  .ns-item {
-    padding: 16px;
-  }
-
-  .ns-num {
-    font-size: 24px;
-  }
-
-  .team-avatar {
-    width: 54px;
-    height: 54px;
-    font-size: 20px;
-  }
-
-  .team-name {
-    font-size: 20px;
-  }
-
-  .cf2-avatar,
-  .cf-avatar {
-    flex-shrink: 0;
-  }
-
-  .print-btn {
-    right: 14px;
-    bottom: 14px;
-    padding: 10px 16px;
-    font-size: 12px;
-  }
-}
 </style>
 </head>
 <body>
@@ -1477,6 +1316,7 @@ em{font-style:italic;}
       </div>
     </div>
     <div>
+      <!-- Mockup solution -->
       <div style="background:#0F1E3A;border-radius:16px;border:1px solid rgba(255,255,255,.1);box-shadow:0 32px 64px rgba(0,0,0,.5);overflow:hidden;font-size:11px;">
         <div style="background:#080F1E;padding:10px 14px;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.06);">
           <div style="width:9px;height:9px;border-radius:50%;background:#FF5F57"></div>
@@ -1798,6 +1638,7 @@ em{font-style:italic;}
       <div class="chart-area">
         <div class="chart-title">CA mensuel (€) — M7 à M60</div>
         <div class="chart-bars">
+          <!-- Bars representing monthly revenue progression -->
           <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:2%;background:rgba(14,124,123,.3);"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.3)">3K</div><div class="chart-bar-lbl">M7</div></div>
           <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:4%;background:rgba(14,124,123,.35);"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.3)">10K</div><div class="chart-bar-lbl">M12</div></div>
           <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:8%;background:rgba(14,124,123,.4);"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.4)">26K</div><div class="chart-bar-lbl">M24</div></div>
@@ -2065,9 +1906,9 @@ em{font-style:italic;}
       <div class="ns-item"><div class="ns-num">04</div><div class="ns-num" style="font-size:20px;color:rgba(255,255,255,.4)">→</div><div class="ns-lbl">Démarrage MVP M1</div></div>
     </div>
     <div class="contact-ctas">
-      <a href="https://calendly.com/nexicare/30min" target="_blank" rel="noopener noreferrer" class="cta-btn cta-primary">Prendre RDV — 30 minutes</a>
+      <a href="https://calendly.com/nexicare/30min" target="_blank" class="cta-btn cta-primary">Prendre RDV — 30 minutes</a>
       <a href="mailto:bertrand@stræm.com" class="cta-btn cta-secondary">bertrand@stræm.com</a>
-      <button type="button" onclick="openBpLead()" class="cta-btn" style="background:rgba(14,124,123,.2);color:#4ECDC4;border:1px solid rgba(14,124,123,.4);cursor:pointer;">📊 Télécharger le BP complet</button>
+      <button onclick="openBpLead()" class="cta-btn" style="background:rgba(14,124,123,.2);color:#4ECDC4;border:1px solid rgba(14,124,123,.4);cursor:pointer;">📊 Télécharger le BP complet</button>
     </div>
     <div class="contact-founders">
       <div class="cf2-item">
@@ -2100,6 +1941,7 @@ em{font-style:italic;}
   🖨️ Exporter en PDF
 </button>
 
+
 <!-- ══ LEAD GATE BP ════════════════════════════════════════════ -->
 <div id="bp-lead-modal" class="lead-overlay" onclick="if(event.target===this)closeBpLead()">
   <div class="lead-box">
@@ -2107,7 +1949,7 @@ em{font-style:italic;}
       <div class="lead-hdr-eye">Business Plan NexiCare v6</div>
       <div class="lead-hdr-title">Accéder au BP complet</div>
       <div class="lead-hdr-sub">Laissez vos coordonnées — le fichier s'ouvre immédiatement.</div>
-      <button type="button" class="lead-close-btn" onclick="closeBpLead()">✕</button>
+      <button class="lead-close-btn" onclick="closeBpLead()">✕</button>
     </div>
     <div class="lead-bdy">
       <form id="bp-lead-form"
@@ -2149,7 +1991,7 @@ em{font-style:italic;}
         <div class="lead-success2-title">Le BP s'ouvre !</div>
         <div class="lead-success2-sub">
           Merci pour votre intérêt. Un membre de l'équipe NexiCare vous contactera prochainement.<br><br>
-          <a href="https://calendly.com/nexicare/30min" target="_blank" rel="noopener noreferrer"
+          <a href="https://calendly.com/nexicare/30min" target="_blank"
              style="color:var(--teal);font-weight:600;text-decoration:none;">
             → Prendre RDV directement
           </a>
@@ -2159,81 +2001,70 @@ em{font-style:italic;}
   </div>
 </div>
 
+
+<div class="mobile-nav-hint" id="mobileHint">
+  <span>↑↓ Faire défiler pour naviguer</span>
+  <span id="slideCounter" style="color:rgba(255,255,255,.4)"></span>
+</div>
+
 <script>
-  const BP_URL = "https://docs.google.com/spreadsheets/d/1v9jPrakG6adjAjBAse_vcvHdd1RxgpWc/edit?rtpof=true&gid=1145430574#gid=1145430574";
+// ── Lead Gate BP ─────────────────────────────────────────────────
+const BP_URL = "https://docs.google.com/spreadsheets/d/1v9jPrakG6adjAjBAse_vcvHdd1RxgpWc/edit?gid=75183900#gid=75183900";
 
-  function openBpLead() {
-    const modal = document.getElementById('bp-lead-modal');
-    if (!modal) return;
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+function openBpLead() {
+  const m = document.getElementById('bp-lead-modal');
+  if (!m) return;
+  m.style.display = 'flex';
+  requestAnimationFrame(() => m.classList.add('open'));
+  document.body.style.overflow = 'hidden';
+}
+function closeBpLead() {
+  const m = document.getElementById('bp-lead-modal');
+  if (!m) return;
+  m.classList.remove('open');
+  setTimeout(() => { if (!m.classList.contains('open')) m.style.display = 'none'; }, 260);
+  document.body.style.overflow = '';
+}
+async function handleBpLead(e) {
+  e.preventDefault();
+  const btn = document.getElementById('bp-submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳</span> Envoi en cours…';
+  const form = document.getElementById('bp-lead-form');
+  try {
+    await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+  } catch(err) {}
+  window.open(BP_URL, '_blank');
+  form.style.display = 'none';
+  document.getElementById('bp-success').style.display = 'block';
+  setTimeout(closeBpLead, 4500);
+}
 
-  function closeBpLead() {
-    const modal = document.getElementById('bp-lead-modal');
-    if (!modal) return;
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
+// ── Init ─────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // Masquer modale BP
+  const m = document.getElementById('bp-lead-modal');
+  if (m) m.style.display = 'none';
 
-  async function handleBpLead(event) {
-    event.preventDefault();
-
-    const form = document.getElementById('bp-lead-form');
-    const submitBtn = document.getElementById('bp-submit-btn');
-    const successBox = document.getElementById('bp-success');
-    const emailInput = document.getElementById('bp-email');
-    const hiddenEmail = document.getElementById('bp-hidden-email');
-
-    if (hiddenEmail && emailInput) {
-      hiddenEmail.value = emailInput.value;
-    }
-
-    if (!form || !submitBtn) return;
-
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span>⏳</span> Envoi en cours...';
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: {
-          'Accept': 'application/json'
+  // Mobile slide counter
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('slideCounter');
+  if (counter && slides.length) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = Array.from(slides).indexOf(entry.target) + 1;
+          counter.textContent = idx + ' / ' + slides.length;
         }
       });
-
-      if (!response.ok) {
-        throw new Error('Erreur lors de l’envoi du formulaire');
-      }
-
-      form.style.display = 'none';
-
-      if (successBox) {
-        successBox.style.display = 'block';
-      }
-
-      setTimeout(() => {
-        if (!BP_URL || BP_URL.includes('https://docs.google.com/spreadsheets/d/1v9jPrakG6adjAjBAse_vcvHdd1RxgpWc/edit?rtpof=true&gid=1145430574#gid=1145430574')) {
-          console.warn('BP_URL non renseigné');
-        } else {
-          window.open(BP_URL, '_blank', 'noopener,noreferrer');
-        }
-      }, 300);
-
-    } catch (error) {
-      console.error(error);
-      alert("Une erreur est survenue lors de l’envoi. Merci de réessayer.");
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<span>📊</span> Accéder au Business Plan';
-    }
+    }, { threshold: 0.5 });
+    slides.forEach(s => obs.observe(s));
   }
-
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closeBpLead();
-    }
-  });
+});
 </script>
 
 </body>
