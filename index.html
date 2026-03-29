@@ -995,6 +995,67 @@ em{font-style:italic;}
   transition:transform .2s,box-shadow .2s;
 }
 .print-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.4);}
+
+/* ── LEAD GATE BP ─────────────────────────────────────────────── */
+.lead-overlay {
+  position: fixed; inset: 0;
+  background: rgba(10,20,40,.9);
+  z-index: 2000;
+  display: none; align-items: center; justify-content: center;
+  padding: 24px; opacity: 0;
+  transition: opacity .25s ease;
+}
+.lead-overlay.open { display: flex; opacity: 1; }
+.lead-box {
+  background: #fff; border-radius: 20px;
+  width: 100%; max-width: 440px;
+  box-shadow: 0 40px 80px rgba(0,0,0,.4);
+  overflow: hidden;
+  transform: translateY(16px) scale(.97);
+  transition: transform .3s ease;
+}
+.lead-overlay.open .lead-box { transform: translateY(0) scale(1); }
+.lead-hdr {
+  background: var(--navy-d); padding: 26px 28px 22px; position: relative;
+}
+.lead-hdr-eye { font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:var(--orange); font-weight:600; margin-bottom:8px; }
+.lead-hdr-title { font-family:'Playfair Display',serif; font-size:20px; font-weight:900; color:#fff; margin-bottom:4px; }
+.lead-hdr-sub { font-size:12px; color:rgba(255,255,255,.5); }
+.lead-close-btn {
+  position:absolute; top:14px; right:14px;
+  width:30px; height:30px; border-radius:50%;
+  background:rgba(255,255,255,.1); border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  font-size:15px; color:rgba(255,255,255,.6);
+  transition:background .2s;
+}
+.lead-close-btn:hover { background:rgba(255,255,255,.2); }
+.lead-bdy { padding:24px 28px 28px; }
+.lead-row2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
+.lead-field { display:flex; flex-direction:column; gap:4px; margin-bottom:10px; }
+.lead-field label { font-size:11px; font-weight:700; color:var(--dark); }
+.lead-field input {
+  padding:10px 12px; border:1.5px solid #E5E7EB; border-radius:7px;
+  font-family:'DM Sans',sans-serif; font-size:13px; color:var(--dark);
+  outline:none; background:#FAFAFA;
+  transition:border-color .2s, box-shadow .2s;
+}
+.lead-field input:focus { border-color:var(--teal); box-shadow:0 0 0 3px rgba(14,124,123,.1); background:#fff; }
+.lead-field input::placeholder { color:#9CA3AF; }
+.lead-submit-btn {
+  width:100%; padding:13px; background:var(--teal); color:#fff; border:none;
+  border-radius:7px; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700;
+  cursor:pointer; transition:transform .2s, box-shadow .2s, background .2s;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+}
+.lead-submit-btn:hover { transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,124,123,.35); }
+.lead-submit-btn:disabled { background:#9CA3AF; transform:none; box-shadow:none; cursor:not-allowed; }
+.lead-note2 { text-align:center; font-size:10px; color:#9CA3AF; margin-top:10px; line-height:1.5; }
+.lead-success2 { display:none; text-align:center; padding:28px 20px; }
+.lead-success2-icon { font-size:44px; margin-bottom:12px; }
+.lead-success2-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:900; color:var(--dark); margin-bottom:8px; }
+.lead-success2-sub { font-size:13px; color:var(--grey); line-height:1.6; }
+
 </style>
 </head>
 <body>
@@ -1718,7 +1779,7 @@ em{font-style:italic;}
     <div class="contact-ctas">
       <a href="https://calendly.com/nexicare/30min" target="_blank" class="cta-btn cta-primary">Prendre RDV — 30 minutes</a>
       <a href="mailto:bertrand@stræm.com" class="cta-btn cta-secondary">bertrand@stræm.com</a>
-      <a href="https://docs.google.com/spreadsheets/d/1v9jPrakG6adjAjBAse_vcvHdd1RxgpWc/edit?gid=75183900#gid=75183900" target="_blank" class="cta-btn" style="background:rgba(14,124,123,.2);color:#4ECDC4;border:1px solid rgba(14,124,123,.4);cursor:pointer;">📊 Télécharger le BP complet</a>
+      <button onclick="openBpLead()" class="cta-btn" style="background:rgba(14,124,123,.2);color:#4ECDC4;border:1px solid rgba(14,124,123,.4);cursor:pointer;">📊 Télécharger le BP complet</button>
     </div>
     <div class="contact-founders">
       <div class="cf2-item">
@@ -1750,6 +1811,66 @@ em{font-style:italic;}
 <button class="print-btn" onclick="window.print()">
   🖨️ Exporter en PDF
 </button>
+
+
+<!-- ══ LEAD GATE BP ════════════════════════════════════════════ -->
+<div id="bp-lead-modal" class="lead-overlay" onclick="if(event.target===this)closeBpLead()">
+  <div class="lead-box">
+    <div class="lead-hdr">
+      <div class="lead-hdr-eye">Business Plan NexiCare v6</div>
+      <div class="lead-hdr-title">Accéder au BP complet</div>
+      <div class="lead-hdr-sub">Laissez vos coordonnées — le fichier s'ouvre immédiatement.</div>
+      <button class="lead-close-btn" onclick="closeBpLead()">✕</button>
+    </div>
+    <div class="lead-bdy">
+      <form id="bp-lead-form"
+            action="https://formspree.io/f/mreogwzl"
+            method="POST"
+            onsubmit="handleBpLead(event)">
+        <input type="hidden" name="_subject" value="NexiCare — Accès Business Plan complet">
+        <input type="hidden" name="_replyto" id="bp-hidden-email">
+        <div class="lead-row2">
+          <div class="lead-field">
+            <label for="bp-prenom">Prénom *</label>
+            <input type="text" id="bp-prenom" name="prenom" placeholder="Sophie" required>
+          </div>
+          <div class="lead-field">
+            <label for="bp-nom">Nom *</label>
+            <input type="text" id="bp-nom" name="nom" placeholder="Dupont" required>
+          </div>
+        </div>
+        <div class="lead-field">
+          <label for="bp-email">Email *</label>
+          <input type="email" id="bp-email" name="email" placeholder="sophie@structure.fr"
+                 required oninput="document.getElementById('bp-hidden-email').value=this.value">
+        </div>
+        <div class="lead-field">
+          <label for="bp-tel">Téléphone</label>
+          <input type="tel" id="bp-tel" name="telephone" placeholder="06 12 34 56 78">
+        </div>
+        <div class="lead-field">
+          <label for="bp-societe">Société / Structure</label>
+          <input type="text" id="bp-societe" name="societe" placeholder="Nom de votre organisation">
+        </div>
+        <button type="submit" class="lead-submit-btn" id="bp-submit-btn">
+          <span>📊</span> Accéder au Business Plan
+        </button>
+        <p class="lead-note2">🔒 Vos données sont confidentielles.<br>Elles ne seront jamais partagées à des tiers.</p>
+      </form>
+      <div class="lead-success2" id="bp-success">
+        <div class="lead-success2-icon">🎉</div>
+        <div class="lead-success2-title">Le BP s'ouvre !</div>
+        <div class="lead-success2-sub">
+          Merci pour votre intérêt. Un membre de l'équipe NexiCare vous contactera prochainement.<br><br>
+          <a href="https://calendly.com/nexicare/30min" target="_blank"
+             style="color:var(--teal);font-weight:600;text-decoration:none;">
+            → Prendre RDV directement
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
