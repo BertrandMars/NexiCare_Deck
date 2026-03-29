@@ -1509,7 +1509,6 @@ em{font-style:italic;}
       <div class="chart-area">
         <div class="chart-title">CA mensuel (€) — M7 à M60</div>
         <div class="chart-bars">
-          <!-- Bars representing monthly revenue progression -->
           <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:2%;background:rgba(14,124,123,.3);"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.3)">3K</div><div class="chart-bar-lbl">M7</div></div>
           <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:4%;background:rgba(14,124,123,.35);"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.3)">10K</div><div class="chart-bar-lbl">M12</div></div>
           <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:8%;background:rgba(14,124,123,.4);"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.4)">26K</div><div class="chart-bar-lbl">M24</div></div>
@@ -1779,7 +1778,7 @@ em{font-style:italic;}
     <div class="contact-ctas">
       <a href="https://calendly.com/nexicare/30min" target="_blank" class="cta-btn cta-primary">Prendre RDV — 30 minutes</a>
       <a href="mailto:bertrand@stræm.com" class="cta-btn cta-secondary">bertrand@stræm.com</a>
-      <button onclick="openBpLead()" class="cta-btn" style="background:rgba(14,124,123,.2);color:#4ECDC4;border:1px solid rgba(14,124,123,.4);cursor:pointer;">📊 Télécharger le BP complet</button>
+      <button type="button" onclick="openBpLead()" class="cta-btn" style="background:rgba(14,124,123,.2);color:#4ECDC4;border:1px solid rgba(14,124,123,.4);cursor:pointer;">📊 Télécharger le BP complet</button>
     </div>
     <div class="contact-founders">
       <div class="cf2-item">
@@ -1812,7 +1811,6 @@ em{font-style:italic;}
   🖨️ Exporter en PDF
 </button>
 
-
 <!-- ══ LEAD GATE BP ════════════════════════════════════════════ -->
 <div id="bp-lead-modal" class="lead-overlay" onclick="if(event.target===this)closeBpLead()">
   <div class="lead-box">
@@ -1820,7 +1818,7 @@ em{font-style:italic;}
       <div class="lead-hdr-eye">Business Plan NexiCare v6</div>
       <div class="lead-hdr-title">Accéder au BP complet</div>
       <div class="lead-hdr-sub">Laissez vos coordonnées — le fichier s'ouvre immédiatement.</div>
-      <button class="lead-close-btn" onclick="closeBpLead()">✕</button>
+      <button type="button" class="lead-close-btn" onclick="closeBpLead()">✕</button>
     </div>
     <div class="lead-bdy">
       <form id="bp-lead-form"
@@ -1871,6 +1869,85 @@ em{font-style:italic;}
     </div>
   </div>
 </div>
+
+<script>
+  const BP_URL = "https://docs.google.com/spreadsheets/d/1v9jPrakG6adjAjBAse_vcvHdd1RxgpWc/edit?gid=75183900#gid=75183900";
+
+  function openBpLead() {
+    const modal = document.getElementById('bp-lead-modal');
+    if (!modal) return;
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeBpLead() {
+    const modal = document.getElementById('bp-lead-modal');
+    if (!modal) return;
+
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  async function handleBpLead(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('bp-lead-form');
+    const submitBtn = document.getElementById('bp-submit-btn');
+    const successBox = document.getElementById('bp-success');
+    const emailInput = document.getElementById('bp-email');
+    const hiddenEmail = document.getElementById('bp-hidden-email');
+
+    if (hiddenEmail && emailInput) {
+      hiddenEmail.value = emailInput.value;
+    }
+
+    if (!form || !submitBtn) return;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span>⏳</span> Envoi en cours...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de l’envoi du formulaire');
+      }
+
+      form.style.display = 'none';
+
+      if (successBox) {
+        successBox.style.display = 'block';
+      }
+
+      setTimeout(() => {
+        if (!BP_URL || BP_URL.includes('https://docs.google.com/spreadsheets/d/1v9jPrakG6adjAjBAse_vcvHdd1RxgpWc/edit?gid=75183900#gid=75183900')) {
+          console.warn('BP_URL non renseigné');
+        } else {
+          window.open(BP_URL, '_blank', 'noopener,noreferrer');
+        }
+      }, 300);
+
+    } catch (error) {
+      console.error(error);
+      alert("Une erreur est survenue lors de l’envoi. Merci de réessayer.");
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<span>📊</span> Accéder au Business Plan';
+    }
+  }
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeBpLead();
+    }
+  });
+</script>
 
 </body>
 </html>
