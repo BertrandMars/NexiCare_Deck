@@ -883,13 +883,19 @@ em{font-style:italic;}
     margin: 0mm;
   }
 
-  html, body {
+  html {
     width: 297mm;
-    height: 210mm;
     margin: 0;
     padding: 0;
     background: #0a0f1a !important;
-    overflow: hidden;
+  }
+
+  body {
+    width: 297mm;
+    margin: 0;
+    padding: 0;
+    background: #0a0f1a !important;
+    /* PAS de height ni overflow:hidden ici — sinon seule la slide 1 s'imprime */
   }
 
   body {
@@ -1950,7 +1956,7 @@ em{font-style:italic;}
   <div class="eyebrow" style="color:var(--orange)">Levée pré-seed · Mars 2026</div>
   <div class="display" style="color:#fff;font-size:clamp(26px,3vw,38px);margin-bottom:10px;position:relative;z-index:2;">
     30 000 € / ticket · 4,5% par ticket.<br>
-    <em style="color:var(--teal-m)">6 à 7 investisseurs · 31,5% maximum.</em>
+    <em style="color:var(--teal-m)">5 à 7 investisseurs · 31,5% maximum.</em>
   </div>
   <div class="invest-grid">
 
@@ -1981,7 +1987,7 @@ em{font-style:italic;}
           <span class="ct2-pct">34,25%</span>
         </div>
         <div class="ct2-row">
-          <span class="ct2-label">5→7 investisseurs (×4,5%)</span>
+          <span class="ct2-label">6→7 investisseurs (×4,5%)</span>
           <div class="ct2-bar-track"><div class="ct2-bar-fill" style="width:31.5%;background:#A78BFA"></div></div>
           <span class="ct2-pct">27→31,5%</span>
         </div>
@@ -2105,7 +2111,7 @@ em{font-style:italic;}
       <div style="font-size:11px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Structure de financement</div>
       <div class="fund-row">
         <div class="fr-source">6-7 investisseurs pré-seed</div>
-        <div class="fr-type">6→7 × 30 000 € · 4,5% / ticket · 31,5% max</div>
+        <div class="fr-type">5→7 × 30 000 € · 4,5% / ticket · 31,5% max</div>
         <div><span class="fr-amount">180–210 000 €</span><span class="fr-badge dil">Dilutif</span></div>
       </div>
       <div class="fund-row">
@@ -2154,7 +2160,7 @@ em{font-style:italic;}
   <div class="contact-inner">
     <div class="eyebrow" style="color:var(--orange)">Prochaine étape</div>
     <h2 class="contact-title">Construisons<br>NexiCare <em>ensemble.</em></h2>
-    <p class="contact-sub">6 à 7 places · 30 000 € / ticket · 4,5% par ticket. Maximum 31,5% cédés · Une LOI pour formaliser sans engagement immédiat.</p>
+    <p class="contact-sub">5 à 7 places · 30 000 € / ticket · 4,5% par ticket. Maximum 31,5% cédés · Une LOI pour formaliser sans engagement immédiat.</p>
     <div class="next-steps">
       <div class="ns-item"><div class="ns-num">01</div><div class="ns-lbl">Lettre d'intention signée</div></div>
       <div class="ns-item"><div class="ns-num">02</div><div class="ns-num" style="font-size:20px;color:rgba(255,255,255,.4)">→</div><div class="ns-lbl">Création SAS Stream Health</div></div>
