@@ -1,4 +1,4 @@
-9<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -1937,7 +1937,7 @@ em{font-style:italic;}
       <div style="width:1px;height:40px;background:rgba(255,255,255,.1)"></div>
       <div><div class="tc-val">0 €</div><div class="tc-desc">Rémunération pendant le MVP · Engagement total</div></div>
       <div style="width:1px;height:40px;background:rgba(255,255,255,.1)"></div>
-      <div><div class="tc-val">70%</div><div class="tc-desc">Capital conservé post-levée à deux fondateurs</div></div>
+      <div><div class="tc-val">75%</div><div class="tc-desc">Capital conservé post-levée à deux fondateurs</div></div>
     </div>
   </div>
   <div class="slide-num">11 / 14</div>
@@ -1963,7 +1963,7 @@ em{font-style:italic;}
       <div class="inv-card"><span class="inv-label">Valorisation pre-money</span><span class="inv-val">467 000 €</span></div>
       <div class="inv-card"><span class="inv-label">Valorisation post-money</span><span class="inv-val">667 000 €</span></div>
       <div class="inv-card"><span class="inv-label">Apport industrie fondateurs</span><span class="inv-val o">96 000 €</span></div>
-      <div class="inv-card"><span class="inv-label">Financement non dilutif (BPI/Région)</span><span class="inv-val t">215 K€</span></div>
+      <div class="inv-card"><span class="inv-label">Financement non dilutif (BPI/Région/CII)</span><span class="inv-val t">280 K€</span></div>
     </div>
 
     <!-- Colonne droite : cap table + ROI -->
@@ -2025,27 +2025,84 @@ em{font-style:italic;}
 <!-- ══ S13 — USE OF FUNDS ═══════════════════════════════════════ -->
 <div class="slide light" id="s13">
   <div class="slide-label" style="color:var(--grey)">Allocation des fonds</div>
-  <div class="eyebrow">Use of funds · Budget MVP</div>
-  <div class="display" style="font-size:clamp(28px,3vw,40px);margin-bottom:8px;">244 200 € pour construire<br><em style="color:var(--teal)">en 6 mois.</em></div>
+  <div class="eyebrow">Utilisation & structure de financement</div>
+  <div class="display" style="font-size:clamp(22px,2.6vw,34px);margin-bottom:8px;">
+    532 K€ de besoins sur 18 mois.<br>
+    <em style="color:var(--teal)">480 K€ financés. Gap de 52 K€ couvert par les revenus A1.</em>
+  </div>
   <div class="funds-grid">
-    <div class="funds-donut">
-      <div class="donut-visual">
-        <div class="donut-hole">
-          <div class="donut-total">415K€</div>
-          <div class="donut-lbl">Budget total</div>
+
+    <!-- Gauche : utilisation des fonds -->
+    <div>
+      <div style="font-size:11px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Utilisation des fonds — MVP + Année 1</div>
+
+      <!-- Barre de budget empilée -->
+      <div style="display:flex;height:14px;border-radius:6px;overflow:hidden;margin-bottom:14px;">
+        <div style="width:36.6%;background:var(--navy);" title="CAPEX Neoria"></div>
+        <div style="width:46.9%;background:#34D399;" title="RH A1"></div>
+        <div style="width:6.0%;background:#6366F1;" title="Maintenance"></div>
+        <div style="width:4.9%;background:#F59E0B;" title="Hébergement HDS"></div>
+        <div style="width:3.2%;background:var(--orange);" title="Marketing"></div>
+        <div style="width:1.9%;background:#4ECDC4;" title="RGPD"></div>
+        <div style="width:0.5%;background:#A78BFA;" title="Assurances"></div>
+      </div>
+
+      <!-- Lignes de détail -->
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:12px;height:12px;border-radius:3px;background:var(--navy);flex-shrink:0;"></div>
+          <div style="flex:1;font-size:12px;color:var(--dark);">CAPEX Neoria — Développement produit</div>
+          <div style="font-size:11px;background:var(--grey-l);padding:2px 8px;border-radius:4px;color:var(--grey);">MVP</div>
+          <div style="font-size:14px;font-weight:700;color:var(--navy);width:72px;text-align:right;">195 000 €</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:12px;height:12px;border-radius:3px;background:#34D399;flex-shrink:0;"></div>
+          <div style="flex:1;font-size:12px;color:var(--dark);">RH — Fondateurs (90K×2) + Sales (70K)</div>
+          <div style="font-size:11px;background:#E8F5E9;padding:2px 8px;border-radius:4px;color:#2E7D32;">A1</div>
+          <div style="font-size:14px;font-weight:700;color:var(--navy);width:72px;text-align:right;">250 000 €</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:12px;height:12px;border-radius:3px;background:#6366F1;flex-shrink:0;"></div>
+          <div style="flex:1;font-size:12px;color:var(--dark);">Maintenance / Hotline back-end</div>
+          <div style="font-size:11px;background:var(--grey-l);padding:2px 8px;border-radius:4px;color:var(--grey);">MVP+A1</div>
+          <div style="font-size:14px;font-weight:700;color:var(--navy);width:72px;text-align:right;">32 000 €</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:12px;height:12px;border-radius:3px;background:#F59E0B;flex-shrink:0;"></div>
+          <div style="flex:1;font-size:12px;color:var(--dark);">Hébergement & infra cloud HDS</div>
+          <div style="font-size:11px;background:var(--grey-l);padding:2px 8px;border-radius:4px;color:var(--grey);">MVP+A1</div>
+          <div style="font-size:14px;font-weight:700;color:var(--navy);width:72px;text-align:right;">26 088 €</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:12px;height:12px;border-radius:3px;background:var(--orange);flex-shrink:0;"></div>
+          <div style="flex:1;font-size:12px;color:var(--dark);">Marketing & déplacements</div>
+          <div style="font-size:11px;background:var(--grey-l);padding:2px 8px;border-radius:4px;color:var(--grey);">MVP+A1</div>
+          <div style="font-size:14px;font-weight:700;color:var(--navy);width:72px;text-align:right;">17 000 €</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:12px;height:12px;border-radius:3px;background:#4ECDC4;flex-shrink:0;"></div>
+          <div style="flex:1;font-size:12px;color:var(--dark);">RGPD / DPO + Juridique</div>
+          <div style="font-size:11px;background:var(--grey-l);padding:2px 8px;border-radius:4px;color:var(--grey);">MVP+A1</div>
+          <div style="font-size:14px;font-weight:700;color:var(--navy);width:72px;text-align:right;">10 000 €</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:12px;height:12px;border-radius:3px;background:#A78BFA;flex-shrink:0;"></div>
+          <div style="flex:1;font-size:12px;color:var(--dark);">Assurances RC Pro & Cyber</div>
+          <div style="font-size:11px;background:var(--grey-l);padding:2px 8px;border-radius:4px;color:var(--grey);">MVP+A1</div>
+          <div style="font-size:14px;font-weight:700;color:var(--navy);width:72px;text-align:right;">2 400 €</div>
+        </div>
+        <!-- Total -->
+        <div style="display:flex;align-items:center;gap:10px;border-top:2px solid var(--navy);padding-top:8px;margin-top:4px;">
+          <div style="width:12px;height:12px;flex-shrink:0;"></div>
+          <div style="flex:1;font-size:13px;font-weight:700;color:var(--navy);">TOTAL BESOINS MVP + A1</div>
+          <div style="font-size:16px;font-weight:800;color:var(--navy);width:72px;text-align:right;">532 K€</div>
         </div>
       </div>
-      <div class="funds-legend">
-        <div class="fl-item"><div class="fl-dot" style="background:var(--navy)"></div><span class="fl-label">Développement Neoria</span><span class="fl-pct">47%</span><span class="fl-amt">195 000 €</span></div>
-        <div class="fl-item"><div class="fl-dot" style="background:var(--teal)"></div><span class="fl-label">BPI Prêt Numérique</span><span class="fl-pct">24%</span><span class="fl-amt">100 000 €</span></div>
-        <div class="fl-item"><div class="fl-dot" style="background:#6366F1"></div><span class="fl-label">Prêt d'honneur BPI</span><span class="fl-pct">11%</span><span class="fl-amt">45 000 €</span></div>
-        <div class="fl-item"><div class="fl-dot" style="background:var(--orange)"></div><span class="fl-label">Runway & trésorerie</span><span class="fl-pct">12%</span><span class="fl-amt">50 000 €</span></div>
-        <div class="fl-item"><div class="fl-dot" style="background:#A78BFA"></div><span class="fl-label">Subventions BFC + BPI</span><span class="fl-pct">17%</span><span class="fl-amt">70 000 €</span></div>
-        <div class="fl-item"><div class="fl-dot" style="background:#4ECDC4"></div><span class="fl-label">OPEX MVP (juridique, infra…)</span><span class="fl-pct">12%</span><span class="fl-amt">50 000 €</span></div>
-      </div>
     </div>
+
+    <!-- Droite : structure de financement -->
     <div class="funds-right">
-      <div style="font-size:12px;font-weight:600;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">Structure de financement</div>
+      <div style="font-size:11px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Structure de financement</div>
       <div class="fund-row">
         <div class="fr-source">6-7 investisseurs pré-seed</div>
         <div class="fr-type">6-7 × 30 000 € min · 4,5% / tranche · 30% max</div>
@@ -2053,25 +2110,40 @@ em{font-style:italic;}
       </div>
       <div class="fund-row">
         <div class="fr-source">BPI — Prêt d'honneur</div>
-        <div class="fr-type">Réseau Entreprendre · Taux 0% · Remboursable 5 ans</div>
-        <div><span class="fr-amount">45 000 €</span><span class="fr-badge nodil">Non dilutif</span></div>
+        <div class="fr-type">Réseau Entreprendre · 0% · 5 ans</div>
+        <div><span class="fr-amount">50 000 €</span><span class="fr-badge nodil">Non dilutif</span></div>
       </div>
       <div class="fund-row">
-        <div class="fr-source">BPI — Prêt Numérique / Innovation</div>
-        <div class="fr-type">Avance remboursable · Taux préférentiel · PTI</div>
+        <div class="fr-source">BPI — Prêt Numérique / PTI</div>
+        <div class="fr-type">Avance remboursable · Taux préférentiel</div>
         <div><span class="fr-amount">100 000 €</span><span class="fr-badge nodil">Non dilutif</span></div>
       </div>
       <div class="fund-row">
         <div class="fr-source">BPI Émergence + Région BFC</div>
         <div class="fr-type">Subventions non remboursables · Ancrage BFC</div>
-        <div><span class="fr-amount">70 000 €</span><span class="fr-badge nodil">Non dilutif</span></div>
+        <div><span class="fr-amount">80 000 €</span><span class="fr-badge nodil">Non dilutif</span></div>
       </div>
-      <div style="background:rgba(14,124,123,.08);border:1px solid rgba(14,124,123,.2);border-radius:10px;padding:14px 16px;margin-top:4px;">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);margin-bottom:6px;">Total budget financement</div>
-        <div style="font-size:28px;font-weight:800;color:var(--navy);">415 000 €</div>
-        <div style="font-size:12px;color:var(--grey);margin-top:4px;">Dont 52% non dilutif · 30% max dilué · Fondateurs sans salaire MVP</div>
+      <div class="fund-row">
+        <div class="fr-source">CII + French Tech Santé</div>
+        <div class="fr-type">Crédit d'Impôt Innovation + Bourse French Tech</div>
+        <div><span class="fr-amount">50 000 €</span><span class="fr-badge nodil">Non dilutif</span></div>
+      </div>
+      <div style="background:rgba(14,124,123,.08);border:1px solid rgba(14,124,123,.2);border-radius:10px;padding:12px 14px;margin-top:6px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--teal);">Total financé</span>
+          <span style="font-size:22px;font-weight:800;color:var(--navy);">480 000 €</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--grey);">
+          <span>Dont non dilutif</span>
+          <span style="font-weight:600;color:var(--teal);">280 000 € (58%)</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--grey);margin-top:2px;">
+          <span>Gap résiduel (revenus A1)</span>
+          <span style="font-weight:600;color:var(--dark);">52 000 €</span>
+        </div>
       </div>
     </div>
+
   </div>
   <div class="slide-num">13 / 14</div>
   <div class="confidential-badge" style="color:var(--grey)">Confidentiel</div>
@@ -2082,7 +2154,7 @@ em{font-style:italic;}
   <div class="contact-inner">
     <div class="eyebrow" style="color:var(--orange)">Prochaine étape</div>
     <h2 class="contact-title">Construisons<br>NexiCare <em>ensemble.</em></h2>
-    <p class="contact-sub">6-7 places disponibles. 30 000 € contre 4,5%. Une lettre d'intention pour formaliser — sans engagement financier immédiat.</p>
+    <p class="contact-sub">5 places disponibles. 30 000 € contre 5%. Une lettre d'intention pour formaliser — sans engagement financier immédiat.</p>
     <div class="next-steps">
       <div class="ns-item"><div class="ns-num">01</div><div class="ns-lbl">Lettre d'intention signée</div></div>
       <div class="ns-item"><div class="ns-num">02</div><div class="ns-num" style="font-size:20px;color:rgba(255,255,255,.4)">→</div><div class="ns-lbl">Création SAS Stream Health</div></div>
@@ -2252,4 +2324,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 </body>
-  </html>
+</html>
