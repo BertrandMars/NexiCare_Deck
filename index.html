@@ -934,6 +934,158 @@ em{font-style:italic;}
 </div>
 
 <script>
+
+// ── Feature Modals ───────────────────────────────────────────────
+const FEATS = {
+  'poste': {
+    icon:'⚡', title:'Poste de commande', sub:'Vision 360° · Décision en 10 secondes',
+    verbatim:'"Avant le CODIR, je passe 2h sur Excel à consolider des chiffres qui ont déjà un jour de retard."',
+    vauth:'— Directeur EHPAD, 80 lits',
+    mockup:`<div class="fm-kpi-row">
+      <div class="fm-kpi"><div class="fm-kpi-val" style="color:#4ECDC4">18</div><div class="fm-kpi-lbl">Dossiers actifs</div></div>
+      <div class="fm-kpi"><div class="fm-kpi-val" style="color:#F59E0B">3</div><div class="fm-kpi-lbl">Admissions en cours</div></div>
+      <div class="fm-kpi"><div class="fm-kpi-val" style="color:#FC8181">2</div><div class="fm-kpi-lbl">Alertes urgentes</div></div>
+    </div>
+    <div style="background:rgba(252,129,129,.12);border-left:2px solid #FC8181;border-radius:0 5px 5px 0;padding:7px 10px;margin-bottom:5px;font-size:11px;color:rgba(255,255,255,.78);">🔴 Mme Dupont — Dossier inactif depuis 5 jours</div>
+    <div style="background:rgba(245,158,11,.1);border-left:2px solid #F59E0B;border-radius:0 5px 5px 0;padding:7px 10px;margin-bottom:5px;font-size:11px;color:rgba(255,255,255,.78);">🟡 CH Saint-Antoine — Relance partenaire J+15</div>
+    <div style="background:rgba(78,205,196,.1);border-left:2px solid #4ECDC4;border-radius:0 5px 5px 0;padding:7px 10px;font-size:11px;color:rgba(255,255,255,.78);">🟢 M. Bernard — Contrat signé et archivé ✓</div>`,
+    feats:['Vision globale de l'activité en temps réel — admissions, alertes, partenaires, qualité','Alertes intelligentes et priorisées — les urgences remontent automatiquement','Indicateurs clés du jour : taux d'occupation, délais, actions en attente','Interface mobile-first — accessible depuis n'importe quel terminal','Rapport CODIR généré en 1 clic, sans ressaisie manuelle'],
+    kpis:[['10 sec','Pour voir ce qui compte'],['0 Excel','Pour le reporting CODIR'],['-2h','Par semaine de prep. direction'],['100%','Mobile, partout, tout le temps']]
+  },
+  'admissions': {
+    icon:'📋', title:'Parcours & Admissions', sub:'Pipeline kanban · Matching automatique · Contrat en 1 clic',
+    verbatim:'"Je pilote dans le rétroviseur. Les données sont là quelque part — mais les retrouver me prend plus de temps que les analyser."',
+    vauth:'— Directrice SAD, réseau 35 structures',
+    mockup:`<div style="display:flex;gap:7px;">
+      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:7px;padding:8px;">
+        <div style="font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:5px;">📥 Demandes (3)</div>
+        <div style="background:rgba(252,129,129,.15);border-radius:5px;padding:6px 8px;margin-bottom:4px;font-size:10px;color:#fff;">Mme Leclerc — GIR 3<br><span style="font-size:9px;color:#FC8181;font-weight:600;">Urgent</span></div>
+        <div style="background:rgba(255,255,255,.06);border-radius:5px;padding:6px 8px;font-size:10px;color:#fff;">M. Renaud — GIR 4</div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:7px;padding:8px;">
+        <div style="font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:5px;">🔍 Matching (1)</div>
+        <div style="background:rgba(245,158,11,.12);border-radius:5px;padding:6px 8px;font-size:10px;color:#fff;">Mme Blanc<br><span style="font-size:9px;color:#F59E0B;font-weight:600;">2 places dispo</span></div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:7px;padding:8px;">
+        <div style="font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:5px;">✅ Admis (2)</div>
+        <div style="background:rgba(14,124,123,.2);border-radius:5px;padding:6px 8px;font-size:10px;color:#fff;">M. Bernard<br><span style="font-size:9px;color:#4ECDC4;font-weight:600;">Contrat signé ✓</span></div>
+      </div>
+    </div>`,
+    feats:['Pipeline visuel kanban de toutes les demandes en cours','Matching automatique profil/place disponible selon critères GIR, proximité, spécificité','Génération du contrat de séjour en 1 clic avec signature électronique','Import direct depuis ViaTrajectoire — zéro ressaisie','Traçabilité complète du parcours : de la demande à l'entrée en structure'],
+    kpis:[['÷2','Délai moyen d'admission'],['74%','Taux de transformation'],['1 clic','Contrat + signature'],['0','Ressaisie depuis ViaTrajectoire']]
+  },
+  'partenaires': {
+    icon:'🤝', title:'Partenaires & Territoire', sub:'CRM médico-social · Roadmap partenariale · Bilan automatique',
+    verbatim:'"On a des partenaires partout sur le territoire, mais on ne sait pas vraiment qui nous envoie des dossiers. C'est dans les têtes."',
+    vauth:'— Directrice SAD, 180 bénéficiaires',
+    mockup:`<div style="display:flex;flex-direction:column;gap:6px;">
+      <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border-radius:7px;padding:8px 10px;">
+        <span style="font-size:16px;">🏥</span>
+        <div style="flex:1"><div style="font-size:11px;color:#fff;font-weight:600;">CH de Dijon</div><div style="font-size:9px;color:rgba(255,255,255,.4);">12 dossiers envoyés · Relation active</div></div>
+        <span style="background:rgba(78,205,196,.2);color:#4ECDC4;font-size:9px;font-weight:600;padding:2px 7px;border-radius:100px;">Prioritaire</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border-radius:7px;padding:8px 10px;">
+        <span style="font-size:16px;">👥</span>
+        <div style="flex:1"><div style="font-size:11px;color:#fff;font-weight:600;">CLIC Auxerre</div><div style="font-size:9px;color:rgba(255,255,255,.4);">3 dossiers · Dernière relance il y a 45j</div></div>
+        <span style="background:rgba(245,158,11,.2);color:#F59E0B;font-size:9px;font-weight:600;padding:2px 7px;border-radius:100px;">À relancer</span>
+      </div>
+    </div>`,
+    feats:['CRM dédié — tous vos partenaires (hôpitaux, CLIC, SAAD, médecins…) dans un outil unique','Roadmap partenariale 4 étapes : Prospect → Contact → Actif → Ambassadeur','Suivi des dossiers envoyés par partenaire — qui vous apporte quoi ?','Bilan mensuel automatique des relations partenariales','Alertes de relance quand un partenaire est inactif depuis X jours'],
+    kpis:[['100%','Partenaires centralisés'],['+40%','Dossiers qualifiés reçus'],['0','Information perdue en tête'],['Auto','Bilan mensuel partenaires']]
+  },
+  'pilotage': {
+    icon:'📊', title:'Pilotage & Indicateurs', sub:'TDB ANAP/ARS pré-calculé · Export PDF · Alertes blocages',
+    verbatim:'"Les indicateurs ANAP deviennent un critère de financement. Les structures sans pilotage sont en risque lors des dialogues de gestion ARS."',
+    vauth:'— Source : ANAP, 2025',
+    mockup:`<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <div style="background:rgba(14,124,123,.15);border:1px solid rgba(14,124,123,.3);border-radius:8px;padding:10px;text-align:center;">
+        <div style="font-size:22px;font-weight:800;color:#4ECDC4;">94%</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.4);">Taux d'occupation</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-align:center;">
+        <div style="font-size:22px;font-weight:800;color:#F59E0B;">8,4j</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.4);">Délai moyen admission</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-align:center;">
+        <div style="font-size:22px;font-weight:800;color:#fff;">3</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.4);">ETP / Résident</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;text-align:center;">
+        <div style="font-size:22px;font-weight:800;color:#86efac;">4,2/5</div>
+        <div style="font-size:9px;color:rgba(255,255,255,.4);">Satisfaction familles</div>
+      </div>
+    </div>`,
+    feats:['TDB ANAP/ARS pré-calculé — tous les indicateurs obligatoires en temps réel','Export PDF en 1 clic pour les dialogues de gestion ARS','Alertes automatiques en cas de dépassement de seuil réglementaire','Vue multi-sites consolidée pour les groupes et réseaux','Historique des indicateurs sur 24 mois — suivi de la progression'],
+    kpis:[['0h','Prep. avant visite ARS'],['1 clic','Export TDB complet PDF'],['100%','Indicateurs ANAP couverts'],['Multi-sites','Vue consolidée groupes']]
+  },
+  'qualite': {
+    icon:'✅', title:'Qualité & Conformité HAS', sub:'18 critères couverts · Traçabilité automatique · 0 Excel qualité',
+    verbatim:'"Quand la visite HAS est annoncée, on passe des nuits à reconstituer des preuves qui auraient dû être tracées depuis des mois."',
+    vauth:'— Responsable qualité, EHPAD 110 lits',
+    mockup:`<div style="display:flex;flex-direction:column;gap:5px;">
+      <div style="display:flex;align-items:center;gap:8px;background:rgba(14,124,123,.1);border-radius:6px;padding:6px 10px;"><span style="color:#4ECDC4;font-weight:700;">✓</span><span style="font-size:11px;color:rgba(255,255,255,.78);">Critère 1 — Preuves tracées automatiquement</span></div>
+      <div style="display:flex;align-items:center;gap:8px;background:rgba(14,124,123,.1);border-radius:6px;padding:6px 10px;"><span style="color:#4ECDC4;font-weight:700;">✓</span><span style="font-size:11px;color:rgba(255,255,255,.78);">Critère 2 — Conformité validée</span></div>
+      <div style="display:flex;align-items:center;gap:8px;background:rgba(14,124,123,.1);border-radius:6px;padding:6px 10px;"><span style="color:#4ECDC4;font-weight:700;">✓</span><span style="font-size:11px;color:rgba(255,255,255,.78);">Critère 3 — Documentation complète</span></div>
+      <div style="display:flex;align-items:center;gap:8px;background:rgba(245,158,11,.1);border-radius:6px;padding:6px 10px;"><span style="color:#F59E0B;font-weight:700;">⏳</span><span style="font-size:11px;color:rgba(255,255,255,.78);">Critère 4 — En cours de complétion</span></div>
+    </div>`,
+    feats:['18 critères d'évaluation HAS couverts nativement — aucune configuration nécessaire','Traçabilité automatique des preuves au fil de l'activité quotidienne','Événements indésirables (EI) saisis depuis mobile en quelques secondes','Plan d'amélioration continue intégré — suivi des actions correctrices','Rapport de préparation HAS généré automatiquement'],
+    kpis:[['18/18','Critères HAS couverts'],['Auto','Traçabilité des preuves'],['0','Nuit blanche avant visite'],['Mobile','Saisie EI en 30 sec']]
+  },
+  'familles': {
+    icon:'👨‍👩‍👧', title:'Familles & Aidants', sub:'Journal unifié · Portail sécurisé · Satisfaction continue',
+    verbatim:'"Les familles appellent sans cesse pour avoir des nouvelles. On perd un temps précieux à répondre à des questions auxquelles on pourrait répondre autrement."',
+    vauth:'— Coordinatrice SAD, 200 bénéficiaires',
+    mockup:`<div style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px;margin-bottom:8px;">
+      <div style="font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:7px;">📱 Journal de Mme Dupont</div>
+      <div style="border-left:2px solid #4ECDC4;padding-left:8px;margin-bottom:5px;"><div style="font-size:10px;color:rgba(255,255,255,.5);">Lundi 9h12</div><div style="font-size:11px;color:#fff;">Séance kinésithérapie — très bonne participation ✓</div></div>
+      <div style="border-left:2px solid #F59E0B;padding-left:8px;"><div style="font-size:10px;color:rgba(255,255,255,.5);">Lundi 12h30</div><div style="font-size:11px;color:#fff;">Repas — appétit réduit, à surveiller</div></div>
+    </div>
+    <div style="background:rgba(14,124,123,.1);border-radius:8px;padding:8px 10px;font-size:11px;color:rgba(255,255,255,.75);">📧 Notification envoyée à la famille — rapport du jour disponible en ligne</div>`,
+    feats:['Journal de suivi partagé avec les familles en temps réel','Portail famille sécurisé — messagerie, documents, contrats en ligne','Notifications automatiques des événements importants','Mesure continue de la satisfaction — enquêtes automatisées','Signature électronique des documents depuis le portail famille'],
+    kpis:[['×3','Taux de réponse satisfaction'],['-60%','Appels entrants familles'],['100%','Documents accessibles en ligne'],['Auto','Notifications famille']]
+  },
+  'vie-sociale': {
+    icon:'🎨', title:'Vie Sociale & Animation', sub:'Planning animation · Suivi participation · Indicateurs HAS · Notification familles',
+    verbatim:'"Le projet de vie individualisé est une exigence HAS, mais personne ne sait vraiment si nos résidents participent aux activités. On le fait à l'instinct."',
+    vauth:'— Animatrice, EHPAD 90 lits',
+    mockup:`<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:8px;">
+      <div style="background:rgba(255,255,255,.07);border-radius:7px;padding:9px;text-align:center;"><div style="font-size:20px;font-weight:800;color:#A78BFA;">18</div><div style="font-size:9px;color:rgba(255,255,255,.4);">Activités / semaine</div></div>
+      <div style="background:rgba(255,255,255,.07);border-radius:7px;padding:9px;text-align:center;"><div style="font-size:20px;font-weight:800;color:#4ECDC4;">78%</div><div style="font-size:9px;color:rgba(255,255,255,.4);">Taux participation</div></div>
+    </div>
+    <div style="background:rgba(167,139,250,.1);border-left:2px solid #A78BFA;border-radius:0 6px 6px 0;padding:7px 10px;font-size:11px;color:rgba(255,255,255,.75);">🎵 Atelier musique — 12 résidents · Mardi 14h → Notification envoyée aux familles</div>`,
+    feats:['Planning d'animation centralisé — toutes les activités sur un seul outil','Suivi individuel de la participation par résident — traçabilité automatique','Indicateurs HAS sur la vie sociale générés automatiquement','Notification aux familles des activités à venir et comptes-rendus','Lien avec le projet de vie individualisé — cohérence du parcours de la personne'],
+    kpis:[['Auto','Indicateurs HAS vie sociale'],['100%','Participation tracée'],['Famille','Notifiée de chaque activité'],['+35%','Participation moyenne']]
+  }
+};
+
+function openFeat(id) {
+  const f = FEATS[id];
+  if (!f) return;
+  const modal = document.getElementById('feat-modal-content');
+  const kpisHtml = f.kpis.map(k => '<div class="fm-kpi-card"><div class="fm-kpi-card-val">'+k[0]+'</div><div class="fm-kpi-card-lbl">'+k[1]+'</div></div>').join('');
+  const featsHtml = f.feats.map(ft => '<div class="fm-feat"><div class="fm-feat-dot"></div><span>'+ft+'</span></div>').join('');
+  modal.innerHTML =
+    '<div class="fm-header"><div><div class="fm-icon">'+f.icon+'</div><div class="fm-title">'+f.title+'</div><div class="fm-sub">'+f.sub+'</div></div>' +
+    '<button class="fm-close" onclick="closeFeat()">✕</button></div>' +
+    '<div class="fm-body">' +
+    '<div class="fm-mockup"><div class="fm-mockup-bar"><div class="fm-mb-dot" style="background:#FF5F57"></div><div class="fm-mb-dot" style="background:#FFBD2E"></div><div class="fm-mb-dot" style="background:#28CA41"></div><span style="margin-left:7px;font-size:9px;color:rgba(255,255,255,.22);">NexiCare — '+f.title+'</span></div>'+f.mockup+'</div>' +
+    '<div class="fm-verbatim">'+f.verbatim+'<div class="fm-verbatim-auth">'+f.vauth+'</div></div>' +
+    '<div class="fm-section-title">Fonctionnalités clés</div><div class="fm-features">'+featsHtml+'</div>' +
+    '<div class="fm-section-title">Impact mesuré</div><div class="fm-kpis">'+kpisHtml+'</div>' +
+    '<div class="fm-cta"><span style="font-size:11px;color:rgba(255,255,255,.35);">Disponible dès le MVP · Inclus dans l'abonnement</span><a href="https://calendly.com/nexicare/30min" target="_blank" class="fm-cta-btn">Prendre RDV →</a></div>' +
+    '</div>';
+  const ov = document.getElementById('feat-overlay');
+  ov.style.display = 'flex';
+  requestAnimationFrame(() => ov.classList.add('open'));
+  document.body.style.overflow = 'hidden';
+}
+function closeFeat() {
+  const ov = document.getElementById('feat-overlay');
+  ov.classList.remove('open');
+  setTimeout(() => { if (!ov.classList.contains('open')) ov.style.display = 'none'; }, 240);
+  document.body.style.overflow = '';
+}
+
 const BP_URL = "https://docs.google.com/spreadsheets/d/1VH9S8CoGXjEvd30j-atsa_bN8jpA347l/edit?gid=1456336320#gid=1456336320";
 function openBpLead(){const m=document.getElementById('bp-lead-modal');if(!m)return;m.style.display='flex';requestAnimationFrame(()=>m.classList.add('open'));document.body.style.overflow='hidden';}
 function closeBpLead(){const m=document.getElementById('bp-lead-modal');if(!m)return;m.classList.remove('open');setTimeout(()=>{if(!m.classList.contains('open'))m.style.display='none';},260);document.body.style.overflow='';}
