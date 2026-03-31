@@ -83,6 +83,158 @@ em{font-style:italic;}
 .v-text{font-size:12px;color:rgba(255,255,255,.78);font-style:italic;line-height:1.6;margin-bottom:5px;}
 .v-auth{font-size:10px;color:rgba(255,255,255,.32);font-weight:600;font-style:normal;}
 
+  /* ── S02B PROBLÈMES OPÉRATIONNELS ── */
+#s02b{
+  background:linear-gradient(135deg,var(--navy-d) 0%, #10284f 60%, rgba(224,123,57,.08) 100%);
+}
+#s02b::before{
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(224,123,57,.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 75%, rgba(14,124,123,.12) 0%, transparent 55%);
+  pointer-events:none;
+}
+.pain-top{
+  position:relative;
+  z-index:2;
+  margin-bottom:26px;
+}
+.pain-sub{
+  font-size:14px;
+  color:rgba(255,255,255,.5);
+  line-height:1.7;
+  max-width:760px;
+  font-weight:300;
+}
+.pain-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:22px;
+}
+.pain-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:22px 22px 20px;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+}
+.pain-card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+.pain-icon{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  background:rgba(255,255,255,.08);
+  flex-shrink:0;
+}
+.pain-badge{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  padding:4px 8px;
+  border-radius:100px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.pain-badge.hot{
+  background:rgba(224,123,57,.18);
+  color:var(--orange);
+  border:1px solid rgba(224,123,57,.28);
+}
+.pain-badge.risk{
+  background:rgba(192,57,43,.14);
+  color:#ff8f84;
+  border:1px solid rgba(192,57,43,.25);
+}
+.pain-badge.ops{
+  background:rgba(14,124,123,.18);
+  color:var(--teal-m);
+  border:1px solid rgba(14,124,123,.28);
+}
+.pain-title{
+  font-size:17px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:7px;
+}
+.pain-desc{
+  font-size:13px;
+  line-height:1.65;
+  color:rgba(255,255,255,.6);
+  margin-bottom:14px;
+}
+.pain-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.pain-li{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  font-size:12px;
+  color:rgba(255,255,255,.72);
+  line-height:1.5;
+}
+.pain-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--orange);
+  margin-top:6px;
+  flex-shrink:0;
+}
+.pain-impact{
+  position:relative;
+  z-index:2;
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.pain-impact-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;
+  padding:14px 14px;
+}
+.pain-impact-val{
+  font-family:'Playfair Display',serif;
+  font-size:24px;
+  font-weight:900;
+  color:var(--orange);
+  line-height:1;
+  margin-bottom:4px;
+}
+.pain-impact-lbl{
+  font-size:11px;
+  color:rgba(255,255,255,.45);
+  line-height:1.45;
+}
+
+@media(max-width:768px){
+  .pain-grid{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+  .pain-impact{
+    grid-template-columns:1fr 1fr !important;
+  }
+}
+
 /* ── S03 SOLUTION ── */
 #s03{background:linear-gradient(135deg,var(--navy-d) 0%,#0E2D5E 65%,rgba(14,124,123,.25) 100%);}
 .sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:2;}
@@ -495,7 +647,7 @@ em{font-style:italic;}
       </div>
     </div>
   </div>
-  <div class="slide-num">01 / 09</div>
+  <div class="slide-num">01 / 10</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
@@ -524,7 +676,109 @@ em{font-style:italic;}
       </div>
     </div>
   </div>
-  <div class="slide-num">02 / 09</div>
+  <div class="slide-num">02 / 10</div>
+  <div class="confidential-badge">Confidentiel</div>
+</div>
+
+  <!-- ══ S02B — PROBLÈMES OPÉRATIONNELS ═══════════════════════════ -->
+<div class="slide dark" id="s02b">
+  <div class="pain-top">
+    <div class="eyebrow">Les problèmes que NexiCare résout</div>
+    <div class="display" style="font-size:clamp(28px,3.2vw,42px);margin-bottom:10px;">
+      Aujourd’hui, les structures ne manquent pas de logiciels.<br>
+      <em>Elles manquent de pilotage.</em>
+    </div>
+    <div class="pain-sub">
+      Le problème n’est pas l’absence d’outils métiers. Le problème, c’est l’absence de couche transverse pour relier les flux, prioriser les actions, tracer la qualité et donner une vision exploitable à la direction comme aux équipes terrain.
+    </div>
+  </div>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-card-head">
+        <div class="pain-icon">🧩</div>
+        <div class="pain-badge hot">Fragmentation</div>
+      </div>
+      <div class="pain-title">Des informations partout, une vision nulle part</div>
+      <div class="pain-desc">
+        Mails, appels, Excel, logiciels métiers, documents papier, messages internes : les données existent, mais elles sont dispersées.
+      </div>
+      <div class="pain-list">
+        <div class="pain-li"><div class="pain-dot"></div><span>Dossiers perdus ou suivis partiellement</span></div>
+        <div class="pain-li"><div class="pain-dot"></div><span>Aucune vue consolidée en temps réel</span></div>
+        <div class="pain-li"><div class="pain-dot"></div><span>Décisions prises avec des informations incomplètes</span></div>
+      </div>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-card-head">
+        <div class="pain-icon">⏳</div>
+        <div class="pain-badge ops">Temps perdu</div>
+      </div>
+      <div class="pain-title">Les équipes administrent la friction au lieu de piloter</div>
+      <div class="pain-desc">
+        Une part massive du temps des directions, coordinations et responsables qualité part dans la ressaisie, la relance, la consolidation et la recherche d’information.
+      </div>
+      <div class="pain-list">
+        <div class="pain-li"><div class="pain-dot"></div><span>Préparation CODIR et reporting manuels</span></div>
+        <div class="pain-li"><div class="pain-dot"></div><span>Admissions ralenties par les allers-retours</span></div>
+        <div class="pain-li"><div class="pain-dot"></div><span>Relances familles et partenaires non industrialisées</span></div>
+      </div>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-card-head">
+        <div class="pain-icon">📉</div>
+        <div class="pain-badge hot">Perte business</div>
+      </div>
+      <div class="pain-title">Ce manque de pilotage coûte du chiffre</div>
+      <div class="pain-desc">
+        Quand le parcours est mal suivi, les admissions prennent du retard, les partenaires sont mal activés, et la structure perd du volume comme du taux d’occupation.
+      </div>
+      <div class="pain-list">
+        <div class="pain-li"><div class="pain-dot"></div><span>Dossiers qui stagnent ou n’aboutissent pas</span></div>
+        <div class="pain-li"><div class="pain-dot"></div><span>Partenaires non relancés au bon moment</span></div>
+        <div class="pain-li"><div class="pain-dot"></div><span>Revenus perdus par manque de visibilité commerciale et opérationnelle</span></div>
+      </div>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-card-head">
+        <div class="pain-icon">⚠️</div>
+        <div class="pain-badge risk">Risque réglementaire</div>
+      </div>
+      <div class="pain-title">La conformité devient un stress de dernière minute</div>
+      <div class="pain-desc">
+        Sans traçabilité native, les preuves HAS, les indicateurs ANAP/ARS et les éléments de qualité sont reconstitués trop tard, trop vite, trop mal.
+      </div>
+      <div class="pain-list">
+        <div class="pain-li"><div class="pain-dot"></div><span>Préparation HAS artisanale et chronophage</span></div>
+        <div class="pain-li"><div class="pain-dot"></div><span>Dialogue de gestion avec des données fragiles</span></div>
+        <div class="pain-li"><div class="pain-dot"></div><span>Risque réputationnel et financier accru</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pain-impact">
+    <div class="pain-impact-card">
+      <div class="pain-impact-val">2h+</div>
+      <div class="pain-impact-lbl">perdues avant chaque CODIR à consolider des chiffres déjà obsolètes</div>
+    </div>
+    <div class="pain-impact-card">
+      <div class="pain-impact-val">Jours</div>
+      <div class="pain-impact-lbl">de retard sur les admissions quand le suivi n’est pas centralisé</div>
+    </div>
+    <div class="pain-impact-card">
+      <div class="pain-impact-val">0 vue</div>
+      <div class="pain-impact-lbl">consolidée sur les partenaires, familles, admissions et qualité</div>
+    </div>
+    <div class="pain-impact-card">
+      <div class="pain-impact-val">Nuits</div>
+      <div class="pain-impact-lbl">passées à reconstituer des preuves HAS qui devraient exister nativement</div>
+    </div>
+  </div>
+
+  <div class="slide-num">03 / 10</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
@@ -588,7 +842,7 @@ em{font-style:italic;}
       </div>
     </div>
   </div>
-  <div class="slide-num">03 / 09</div>
+  <div class="slide-num">04 / 10</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
@@ -614,7 +868,7 @@ em{font-style:italic;}
       <div class="t-desc">Transition vers un modèle indexé sur la qualité de service. La traçabilité devient un levier financier direct pour les structures.</div>
     </div>
   </div>
-  <div class="slide-num">04 / 09</div>
+  <div class="slide-num">05 / 10</div>
   <div class="confidential-badge" style="color:var(--grey)">Confidentiel</div>
 </div>
 
@@ -677,7 +931,7 @@ em{font-style:italic;}
       </div>
     </div>
   </div>
-  <div class="slide-num">05 / 09</div>
+  <div class="slide-num">06 / 10</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
@@ -719,7 +973,7 @@ em{font-style:italic;}
       <div><div class="tc-val">79%</div><div class="tc-desc">Capital conservé post-levée</div></div>
     </div>
   </div>
-  <div class="slide-num">06 / 09</div>
+  <div class="slide-num">07 / 10</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
@@ -751,7 +1005,7 @@ em{font-style:italic;}
       </div>
     </div>
   </div>
-  <div class="slide-num">07 / 09</div>
+  <div class="slide-num">08 / 10</div>
   <div class="confidential-badge" style="color:var(--grey)">Confidentiel</div>
 </div>
 
@@ -791,7 +1045,7 @@ em{font-style:italic;}
       </div>
     </div>
   </div>
-  <div class="slide-num">08 / 09</div>
+  <div class="slide-num">09 / 10</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
@@ -883,7 +1137,7 @@ em{font-style:italic;}
       </div>
     </div>
   </div>
-  <div class="slide-num">09 / 09</div>
+  <div class="slide-num">10 / 10</div>
 </div>
 
 <button class="print-btn" onclick="window.print()">🖨️ Exporter en PDF</button>
