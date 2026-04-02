@@ -83,158 +83,6 @@ em{font-style:italic;}
 .v-text{font-size:12px;color:rgba(255,255,255,.78);font-style:italic;line-height:1.6;margin-bottom:5px;}
 .v-auth{font-size:10px;color:rgba(255,255,255,.32);font-weight:600;font-style:normal;}
 
-  /* ── S02B PROBLÈMES OPÉRATIONNELS ── */
-#s02b{
-  background:linear-gradient(135deg,var(--navy-d) 0%, #10284f 60%, rgba(224,123,57,.08) 100%);
-}
-#s02b::before{
-  content:'';
-  position:absolute; inset:0;
-  background:
-    radial-gradient(ellipse at 80% 20%, rgba(224,123,57,.10) 0%, transparent 50%),
-    radial-gradient(ellipse at 15% 75%, rgba(14,124,123,.12) 0%, transparent 55%);
-  pointer-events:none;
-}
-.pain-top{
-  position:relative;
-  z-index:2;
-  margin-bottom:26px;
-}
-.pain-sub{
-  font-size:14px;
-  color:rgba(255,255,255,.5);
-  line-height:1.7;
-  max-width:760px;
-  font-weight:300;
-}
-.pain-grid{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  margin-top:22px;
-}
-.pain-card{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:16px;
-  padding:22px 22px 20px;
-  box-shadow:0 8px 24px rgba(0,0,0,.18);
-}
-.pain-card-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:12px;
-}
-.pain-icon{
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
-  background:rgba(255,255,255,.08);
-  flex-shrink:0;
-}
-.pain-badge{
-  font-size:9px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  padding:4px 8px;
-  border-radius:100px;
-  font-weight:700;
-  white-space:nowrap;
-}
-.pain-badge.hot{
-  background:rgba(224,123,57,.18);
-  color:var(--orange);
-  border:1px solid rgba(224,123,57,.28);
-}
-.pain-badge.risk{
-  background:rgba(192,57,43,.14);
-  color:#ff8f84;
-  border:1px solid rgba(192,57,43,.25);
-}
-.pain-badge.ops{
-  background:rgba(14,124,123,.18);
-  color:var(--teal-m);
-  border:1px solid rgba(14,124,123,.28);
-}
-.pain-title{
-  font-size:17px;
-  font-weight:700;
-  color:#fff;
-  margin-bottom:7px;
-}
-.pain-desc{
-  font-size:13px;
-  line-height:1.65;
-  color:rgba(255,255,255,.6);
-  margin-bottom:14px;
-}
-.pain-list{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-.pain-li{
-  display:flex;
-  align-items:flex-start;
-  gap:8px;
-  font-size:12px;
-  color:rgba(255,255,255,.72);
-  line-height:1.5;
-}
-.pain-dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--orange);
-  margin-top:6px;
-  flex-shrink:0;
-}
-.pain-impact{
-  position:relative;
-  z-index:2;
-  margin-top:20px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-.pain-impact-card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:12px;
-  padding:14px 14px;
-}
-.pain-impact-val{
-  font-family:'Playfair Display',serif;
-  font-size:24px;
-  font-weight:900;
-  color:var(--orange);
-  line-height:1;
-  margin-bottom:4px;
-}
-.pain-impact-lbl{
-  font-size:11px;
-  color:rgba(255,255,255,.45);
-  line-height:1.45;
-}
-
-@media(max-width:768px){
-  .pain-grid{
-    grid-template-columns:1fr !important;
-    gap:14px !important;
-  }
-  .pain-impact{
-    grid-template-columns:1fr 1fr !important;
-  }
-}
-
 /* ── S03 SOLUTION ── */
 #s03{background:linear-gradient(135deg,var(--navy-d) 0%,#0E2D5E 65%,rgba(14,124,123,.25) 100%);}
 .sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:2;}
@@ -592,8 +440,8 @@ em{font-style:italic;}
         <h1 class="cover-title">Le cockpit<br>qui manquait<br>aux <em>acteurs du soin.</em></h1>
         <p class="cover-sub">NexiCare pilote l'intégralité du parcours de la personne accompagnée — superposé aux logiciels existants, sans les remplacer.</p>
         <div class="cover-meta">
-          <div class="cover-meta-item"><strong>Levée pré-seed :</strong> 180–250 000 € · 5 à 7 investisseurs · 30 000 € minimum / ticket</div>
-          <div class="cover-meta-item"><strong>~3%  minimum par ticket</strong> · ~25% max · Pre-money 950 000 €</div>
+          <div class="cover-meta-item"><strong>Levée pré-seed :</strong> 200–250 000 € · 4 à 6 investisseurs · 30 000 € min / ticket</div>
+          <div class="cover-meta-item"><strong>~2,5% par ticket (30 K€)</strong> · ~21% max · Pre-money 950 000 €</div>
           <div class="cover-meta-item"><strong>Confidentiel</strong> · 2026</div>
         </div>
       </div>
@@ -643,206 +491,143 @@ em{font-style:italic;}
       <div class="cf-sep"></div>
       <div class="cf-raise">
         <div class="cf-raise-num">950 K€</div>
-        <div class="cf-raise-lbl">Pre-money ·  ~25% max</div>
+        <div class="cf-raise-lbl">Pre-money · 4 à 6 investisseurs · ~21% max</div>
       </div>
     </div>
   </div>
-  <div class="slide-num">01 / 10</div>
+  <div class="slide-num">01 / 09</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
 <!-- ══ S02 — PROBLÈME ═══════════════════════════════════════════ -->
 <div class="slide dark" id="s02">
   <div class="eyebrow">Le vide structurel</div>
-  <div class="display" style="font-size:clamp(32px,3.5vw,48px);margin-bottom:32px;">Le secteur <em>souffre</em> d'un angle mort.</div>
-  <div class="prob-grid">
+  <div class="display" style="font-size:clamp(28px,3.2vw,44px);margin-bottom:28px;">
+    40 000 structures. <em>Aucun cockpit.</em>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;position:relative;z-index:2;">
     <div>
-      <div class="prob-stat">40K</div>
-      <div class="prob-lbl">structures sans outil de pilotage adapté à leurs pratiques et contraintes</div>
-      <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,.38);line-height:1.7;">Les logiciels métiers existent — DPI, planification, facturation. Mais aucun outil ne relie ces silos pour permettre de <strong style="color:rgba(255,255,255,.65)">voir, décider et piloter</strong> en temps réel.</div>
-    </div>
-    <div class="verbatims">
-      <div class="v-item">
-        <div class="v-text">"Avant le CODIR, je passe 2h sur Excel à consolider des chiffres qui ont déjà un jour de retard."</div>
-        <div class="v-auth">— Directeur EHPAD, 80 lits</div>
-      </div>
-      <div class="v-item">
-        <div class="v-text">"On a des partenaires partout sur le territoire, mais on ne sait pas vraiment qui nous envoie des dossiers. C'est dans les têtes."</div>
-        <div class="v-auth">— Directrice SAD, 180 bénéficiaires</div>
-      </div>
-      <div class="v-item">
-        <div class="v-text">"Quand la visite HAS est annoncée, on passe des nuits à reconstituer des preuves qui auraient dû être tracées depuis des mois."</div>
-        <div class="v-auth">— Responsable qualité, EHPAD 110 lits</div>
-      </div>
-    </div>
-  </div>
-  <div class="slide-num">02 / 10</div>
-  <div class="confidential-badge">Confidentiel</div>
-</div>
-
-  <!-- ══ S02B — PROBLÈMES OPÉRATIONNELS ═══════════════════════════ -->
-<div class="slide dark" id="s02b">
-  <div class="pain-top">
-    <div class="eyebrow">Les problèmes que NexiCare résout</div>
-    <div class="display" style="font-size:clamp(28px,3.2vw,42px);margin-bottom:10px;">
-      Aujourd’hui, les structures ne manquent pas de logiciels.<br>
-      <em>Elles manquent de pilotage.</em>
-    </div>
-    <div class="pain-sub">
-      Le problème n’est pas l’absence d’outils métiers. Le problème, c’est l’absence de couche transverse pour relier les flux, prioriser les actions, tracer la qualité et donner une vision exploitable à la direction comme aux équipes terrain.
-    </div>
-  </div>
-
-  <div class="pain-grid">
-    <div class="pain-card">
-      <div class="pain-card-head">
-        <div class="pain-icon">🧩</div>
-        <div class="pain-badge hot">Fragmentation</div>
-      </div>
-      <div class="pain-title">Des informations partout, une vision nulle part</div>
-      <div class="pain-desc">
-        Mails, appels, Excel, logiciels métiers, documents papier, messages internes : les données existent, mais elles sont dispersées.
-      </div>
-      <div class="pain-list">
-        <div class="pain-li"><div class="pain-dot"></div><span>Dossiers perdus ou suivis partiellement</span></div>
-        <div class="pain-li"><div class="pain-dot"></div><span>Aucune vue consolidée en temps réel</span></div>
-        <div class="pain-li"><div class="pain-dot"></div><span>Décisions prises avec des informations incomplètes</span></div>
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">Ce que vivent les équipes chaque jour</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.05);border-left:3px solid var(--orange);border-radius:0 9px 9px 0;padding:12px 14px;">
+          <span style="font-size:18px;flex-shrink:0;">🗂️</span>
+          <div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;">20 à 40 icônes sur un bureau</div><div style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.5;">Chaque directeur jongle entre des dizaines d'applications sans vue d'ensemble. Aucun fil conducteur. Aucun cockpit.</div></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.05);border-left:3px solid var(--orange);border-radius:0 9px 9px 0;padding:12px 14px;">
+          <span style="font-size:18px;flex-shrink:0;">🔄</span>
+          <div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;">Des outils qui ne se parlent pas</div><div style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.5;">DPI, planning, facturation, ViaTrajectoire — chaque solution vit dans son silo. Zéro transversalité. Zéro automatisation croisée.</div></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.05);border-left:3px solid var(--orange);border-radius:0 9px 9px 0;padding:12px 14px;">
+          <span style="font-size:18px;flex-shrink:0;">✍️</span>
+          <div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;">La re-saisie permanente</div><div style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.5;">La même information saisie 3, 4, 5 fois dans des outils différents. Perte de temps, erreurs, données contradictoires entre services.</div></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.05);border-left:3px solid var(--orange);border-radius:0 9px 9px 0;padding:12px 14px;">
+          <span style="font-size:18px;flex-shrink:0;">💸</span>
+          <div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;">Des outils payants, sous-utilisés</div><div style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.5;">Souvent 100 à 150 €/utilisateur/mois pour des solutions génériques que les équipes terrain n'adoptent pas — inadaptées à leur réalité métier.</div></div>
+        </div>
       </div>
     </div>
-
-    <div class="pain-card">
-      <div class="pain-card-head">
-        <div class="pain-icon">⏳</div>
-        <div class="pain-badge ops">Temps perdu</div>
+    <div>
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">Les conséquences directes</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:18px;">⏳</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.5;">Du temps massivement perdu à chercher l'information entre les outils, à compiler des données déjà existantes ailleurs</span>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:18px;">😓</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.5;">Des équipes fatiguées par la complexité des process, la multiplication des formations et l'absence d'outil fédérateur</span>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:18px;">🔍</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.5;">Des directions qui pilotent dans le rétroviseur — les données existent mais personne ne les voit toutes en même temps</span>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:18px;">📋</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.5;">Des nuits blanches avant chaque visite HAS, chaque dialogue de gestion ARS — à reconstituer des preuves qui auraient dû être tracées au fil de l'eau</span>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:18px;">🔁</span><span style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.5;">Un turn-over accentué par des outils perçus comme une charge, pas comme une aide — et une difficulté réelle à stabiliser les équipes</span>
+        </div>
       </div>
-      <div class="pain-title">Les équipes administrent la friction au lieu de piloter</div>
-      <div class="pain-desc">
-        Une part massive du temps des directions, coordinations et responsables qualité part dans la ressaisie, la relance, la consolidation et la recherche d’information.
-      </div>
-      <div class="pain-list">
-        <div class="pain-li"><div class="pain-dot"></div><span>Préparation CODIR et reporting manuels</span></div>
-        <div class="pain-li"><div class="pain-dot"></div><span>Admissions ralenties par les allers-retours</span></div>
-        <div class="pain-li"><div class="pain-dot"></div><span>Relances familles et partenaires non industrialisées</span></div>
-      </div>
-    </div>
-
-    <div class="pain-card">
-      <div class="pain-card-head">
-        <div class="pain-icon">📉</div>
-        <div class="pain-badge hot">Perte business</div>
-      </div>
-      <div class="pain-title">Ce manque de pilotage coûte du chiffre</div>
-      <div class="pain-desc">
-        Quand le parcours est mal suivi, les admissions prennent du retard, les partenaires sont mal activés, et la structure perd du volume comme du taux d’occupation.
-      </div>
-      <div class="pain-list">
-        <div class="pain-li"><div class="pain-dot"></div><span>Dossiers qui stagnent ou n’aboutissent pas</span></div>
-        <div class="pain-li"><div class="pain-dot"></div><span>Partenaires non relancés au bon moment</span></div>
-        <div class="pain-li"><div class="pain-dot"></div><span>Revenus perdus par manque de visibilité commerciale et opérationnelle</span></div>
-      </div>
-    </div>
-
-    <div class="pain-card">
-      <div class="pain-card-head">
-        <div class="pain-icon">⚠️</div>
-        <div class="pain-badge risk">Risque réglementaire</div>
-      </div>
-      <div class="pain-title">La conformité devient un stress de dernière minute</div>
-      <div class="pain-desc">
-        Sans traçabilité native, les preuves HAS, les indicateurs ANAP/ARS et les éléments de qualité sont reconstitués trop tard, trop vite, trop mal.
-      </div>
-      <div class="pain-list">
-        <div class="pain-li"><div class="pain-dot"></div><span>Préparation HAS artisanale et chronophage</span></div>
-        <div class="pain-li"><div class="pain-dot"></div><span>Dialogue de gestion avec des données fragiles</span></div>
-        <div class="pain-li"><div class="pain-dot"></div><span>Risque réputationnel et financier accru</span></div>
+      <div style="margin-top:14px;background:rgba(224,123,57,.12);border:1px solid rgba(224,123,57,.3);border-radius:9px;padding:12px 14px;font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;font-style:italic;">
+        "Le matin j'arrive, je compte les icônes sur mon écran. J'en ai 28. Pour faire mon travail, j'en utilise 12. Aucune ne parle aux autres."<br><span style="font-size:11px;color:rgba(255,255,255,.35);font-style:normal;font-weight:600;">— Directrice SAD, réseau 35 structures</span>
       </div>
     </div>
   </div>
-
-  <div class="pain-impact">
-    <div class="pain-impact-card">
-      <div class="pain-impact-val">2h+</div>
-      <div class="pain-impact-lbl">perdues avant chaque CODIR à consolider des chiffres déjà obsolètes</div>
-    </div>
-    <div class="pain-impact-card">
-      <div class="pain-impact-val">Jours</div>
-      <div class="pain-impact-lbl">de retard sur les admissions quand le suivi n’est pas centralisé</div>
-    </div>
-    <div class="pain-impact-card">
-      <div class="pain-impact-val">0 vue</div>
-      <div class="pain-impact-lbl">consolidée sur les partenaires, familles, admissions et qualité</div>
-    </div>
-    <div class="pain-impact-card">
-      <div class="pain-impact-val">Nuits</div>
-      <div class="pain-impact-lbl">passées à reconstituer des preuves HAS qui devraient exister nativement</div>
-    </div>
-  </div>
-
-  <div class="slide-num">03 / 10</div>
+  <div class="slide-num">02 / 09</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
 <!-- ══ S03 — SOLUTION ═══════════════════════════════════════════ -->
 <div class="slide" id="s03">
-  <div class="sol-grid">
+  <div class="eyebrow" style="color:var(--teal-m)">NexiCare — La réponse</div>
+  <div class="display" style="color:#fff;font-size:clamp(26px,3vw,40px);margin-bottom:6px;">Un seul outil. <em>Toutes les fonctionnalités essentielles.</em><br>Zéro remplacement. Zéro double saisie.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:22px;position:relative;z-index:2;">
+
+    <!-- Gauche : fonctionnalités + à venir -->
     <div>
-      <div class="eyebrow" style="color:var(--teal-m)">NexiCare</div>
-      <div class="sol-title">Le <em>cockpit</em><br>organisationnel<br>qui manquait.</div>
-      <div class="sol-desc">Superposé aux logiciels existants — NetSoins, Titan, Livia, Ogust, ViaTrajectoire — sans les remplacer. Zéro double saisie.</div>
-      <div class="sol-pills">
-        <div class="pill accent">Anti-double-saisie</div>
-        <div class="pill accent">Mobile-first</div>
-        <div class="pill accent">HDS certifié</div>
-        <div class="pill">Parcours hors soins</div>
-        <div class="pill">Multi-typologies</div>
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Fonctionnalités au lancement</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+        <div style="background:rgba(14,124,123,.2);border:1px solid rgba(14,124,123,.35);border-radius:9px;padding:10px 12px;">
+          <div style="font-size:16px;margin-bottom:4px;">📋</div><div style="font-size:12px;font-weight:600;color:#fff;">Parcours & Admissions</div><div style="font-size:10px;color:rgba(255,255,255,.45);margin-top:2px;">Pipeline · Matching · Contrat 2 clics</div>
+        </div>
+        <div style="background:rgba(14,124,123,.2);border:1px solid rgba(14,124,123,.35);border-radius:9px;padding:10px 12px;">
+          <div style="font-size:16px;margin-bottom:4px;">🤝</div><div style="font-size:12px;font-weight:600;color:#fff;">Partenaires & Territoire</div><div style="font-size:10px;color:rgba(255,255,255,.45);margin-top:2px;">CRM sectoriel · Réseau prescripteurs</div>
+        </div>
+        <div style="background:rgba(14,124,123,.2);border:1px solid rgba(14,124,123,.35);border-radius:9px;padding:10px 12px;">
+          <div style="font-size:16px;margin-bottom:4px;">👨‍👩‍👧</div><div style="font-size:12px;font-weight:600;color:#fff;">Familles & Aidants</div><div style="font-size:10px;color:rgba(255,255,255,.45);margin-top:2px;">Portail · Journal · Satisfaction</div>
+        </div>
+        <div style="background:rgba(14,124,123,.2);border:1px solid rgba(14,124,123,.35);border-radius:9px;padding:10px 12px;">
+          <div style="font-size:16px;margin-bottom:4px;">✅</div><div style="font-size:12px;font-weight:600;color:#fff;">Qualité & Conformité HAS</div><div style="font-size:10px;color:rgba(255,255,255,.45);margin-top:2px;">18 critères natifs · Preuves auto</div>
+        </div>
+        <div style="background:rgba(14,124,123,.2);border:1px solid rgba(14,124,123,.35);border-radius:9px;padding:10px 12px;">
+          <div style="font-size:16px;margin-bottom:4px;">🎨</div><div style="font-size:12px;font-weight:600;color:#fff;">Vie Sociale & Animation</div><div style="font-size:10px;color:rgba(255,255,255,.45);margin-top:2px;">Planning · Participation · HAS</div>
+        </div>
+        <div style="background:rgba(14,124,123,.2);border:1px solid rgba(14,124,123,.35);border-radius:9px;padding:10px 12px;">
+          <div style="font-size:16px;margin-bottom:4px;">📊</div><div style="font-size:12px;font-weight:600;color:#fff;">Indicateurs & Pilotage</div><div style="font-size:10px;color:rgba(255,255,255,.45);margin-top:2px;">TDB ANAP/ARS · Export auto</div>
+        </div>
+      </div>
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:9px;">Roadmap — prochaines briques</div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;">
+        <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:4px 11px;font-size:11px;color:rgba(255,255,255,.5);">💰 Facturation & Comptabilité</span>
+        <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:4px 11px;font-size:11px;color:rgba(255,255,255,.5);">👥 Gestion RH</span>
+        <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:4px 11px;font-size:11px;color:rgba(255,255,255,.5);">🏗️ Gestion technique</span>
+        <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:4px 11px;font-size:11px;color:rgba(255,255,255,.5);">📦 + d'autres à venir</span>
       </div>
     </div>
-    <div class="features-grid">
-      <div class="feat-item" onclick="openFeat('poste')">
-        <div class="feat-icon">⚡</div>
-        <div class="feat-name">Poste de commande</div>
-        <div class="feat-desc">Vision globale · Alertes · Actions du jour en 10 secondes</div>
-        <button class="feat-btn">Découvrir →</button>
+
+    <!-- Droite : objectifs et principes -->
+    <div>
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Ce que NexiCare change concrètement</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:28px;height:28px;border-radius:7px;background:rgba(14,124,123,.3);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">↓</div>
+          <div><span style="font-size:13px;font-weight:600;color:#fff;">Diviser le nombre d'outils</span><br><span style="font-size:11px;color:rgba(255,255,255,.45);">Un outil central remplace plusieurs solutions éparses</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:28px;height:28px;border-radius:7px;background:rgba(14,124,123,.3);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">0</div>
+          <div><span style="font-size:13px;font-weight:600;color:#fff;">Zéro double saisie</span><br><span style="font-size:11px;color:rgba(255,255,255,.45);">Une information saisie une fois, partagée partout</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:28px;height:28px;border-radius:7px;background:rgba(14,124,123,.3);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">⚡</div>
+          <div><span style="font-size:13px;font-weight:600;color:#fff;">Process automatisés pour chaque métier</span><br><span style="font-size:11px;color:rgba(255,255,255,.45);">Admission, qualité, partenaires — chaque flux est guidé et traçable</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:28px;height:28px;border-radius:7px;background:rgba(14,124,123,.3);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">🔗</div>
+          <div><span style="font-size:13px;font-weight:600;color:#fff;">Transversalité totale entre les modules</span><br><span style="font-size:11px;color:rgba(255,255,255,.45);">Ce qui se passe aux admissions impacte les indicateurs. En temps réel.</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:28px;height:28px;border-radius:7px;background:rgba(14,124,123,.3);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">✍️</div>
+          <div><span style="font-size:13px;font-weight:600;color:#fff;">Contrat & signature en 2 clics</span><br><span style="font-size:11px;color:rgba(255,255,255,.45);">Signature électronique intégrée — de la demande au contrat en quelques minutes</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:28px;height:28px;border-radius:7px;background:rgba(14,124,123,.3);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">📱</div>
+          <div><span style="font-size:13px;font-weight:600;color:#fff;">Mobile-first · HDS certifié · RGPD by design</span><br><span style="font-size:11px;color:rgba(255,255,255,.45);">Accessible partout, sécurisé, conforme aux exigences du secteur</span></div>
+        </div>
       </div>
-      <div class="feat-item" onclick="openFeat('admissions')">
-        <div class="feat-icon">📋</div>
-        <div class="feat-name">Parcours & Admissions</div>
-        <div class="feat-desc">Pipeline · Matching auto · Contrat + signature électronique</div>
-        <button class="feat-btn">Découvrir →</button>
-      </div>
-      <div class="feat-item" onclick="openFeat('partenaires')">
-        <div class="feat-icon">🤝</div>
-        <div class="feat-name">Partenaires & Territoire</div>
-        <div class="feat-desc">CRM sectoriel · Roadmap partenariale · Bilan auto</div>
-        <button class="feat-btn">Découvrir →</button>
-      </div>
-      <div class="feat-item" onclick="openFeat('pilotage')">
-        <div class="feat-icon">📊</div>
-        <div class="feat-name">Pilotage & ANAP/ARS</div>
-        <div class="feat-desc">TDB pré-calculé · Export PDF · Alertes blocages</div>
-        <button class="feat-btn">Découvrir →</button>
-      </div>
-      <div class="feat-item" onclick="openFeat('qualite')">
-        <div class="feat-icon">✅</div>
-        <div class="feat-name">Qualité & HAS</div>
-        <div class="feat-desc">18 critères natifs · Preuves auto · 0 Excel qualité</div>
-        <button class="feat-btn">Découvrir →</button>
-      </div>
-      <div class="feat-item" onclick="openFeat('familles')">
-        <div class="feat-icon">👨‍👩‍👧</div>
-        <div class="feat-name">Familles & Aidants</div>
-        <div class="feat-desc">Journal unifié · Portail sécurisé · Satisfaction continue</div>
-        <button class="feat-btn">Découvrir →</button>
-      </div>
-      <div class="feat-item" onclick="openFeat('vie-sociale')">
-        <div class="feat-icon">🎨</div>
-        <div class="feat-name">Vie Sociale & Animation</div>
-        <div class="feat-desc">Planning animation · Suivi participation · Indicateurs HAS</div>
-        <button class="feat-btn">Découvrir →</button>
+      <div style="margin-top:14px;background:rgba(255,255,255,.05);border-radius:9px;padding:11px 13px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.5;">
+        <strong style="color:var(--teal-m)">Positionnement unique :</strong> NexiCare ne remplace pas vos logiciels métiers — il se superpose à eux. Zéro migration, zéro résistance des équipes, adoption immédiate.
       </div>
     </div>
   </div>
-  <div class="slide-num">04 / 10</div>
+  <div class="slide-num">03 / 09</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
@@ -868,241 +653,332 @@ em{font-style:italic;}
       <div class="t-desc">Transition vers un modèle indexé sur la qualité de service. La traçabilité devient un levier financier direct pour les structures.</div>
     </div>
   </div>
-  <div class="slide-num">05 / 10</div>
+  <div class="slide-num">04 / 09</div>
   <div class="confidential-badge" style="color:var(--grey)">Confidentiel</div>
 </div>
 
-<!-- ══ S05 — MARCHÉ ══════════════════════════════════════════════ -->
+<!-- ══ S05 — MARCHÉ ════════════════════════════════════════════════ -->
 <div class="slide dark" id="s05">
   <div class="eyebrow">Le marché</div>
-  <div class="display" style="font-size:clamp(30px,3.3vw,44px);margin-bottom:32px;">40 000 structures.<br><em>Un seul concurrent direct :</em> personne.</div>
-  <div class="market-grid">
-    <div class="market-numbers">
-      <div>
-        <div class="m-tag">TAM — Marché total adressable</div>
-        <div class="m-val t">1,8<span>Md€</span></div>
-        <div class="m-sub">40 000 structures × 415€/mois × 12</div>
+  <div class="display" style="font-size:clamp(28px,3.2vw,44px);margin-bottom:28px;">40 000 structures en France.<br><em>Un seul concurrent direct : personne.</em></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;position:relative;z-index:2;">
+    <div>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div>
+          <div class="m-tag">TAM — Marché total adressable</div>
+          <div class="m-val t">1,8<span>Md€</span></div>
+          <div class="m-sub">40 000 structures × 380 € ARPA moyen × 12 mois</div>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,.07)"></div>
+        <div>
+          <div class="m-tag">SAM — Objectif 5 ans (scénario base)</div>
+          <div class="m-val o">913<span> structures</span></div>
+          <div class="m-sub">Cible atteinte à M60 · Break-even à M24</div>
+        </div>
+        <div style="height:1px;background:rgba(255,255,255,.07)"></div>
+        <div>
+          <div class="m-tag">ARPA moyen global</div>
+          <div class="m-val w">385<span>€/mois</span></div>
+          <div class="m-sub">Par structure · Tarif adapté à la taille · Sans limite d'utilisateurs</div>
+        </div>
       </div>
-      <div style="height:1px;background:rgba(255,255,255,.07)"></div>
-      <div>
-        <div class="m-tag">SAM — Marché accessible 5 ans</div>
-        <div class="m-val o">47<span>M€</span></div>
-        <div class="m-sub">913 structures cible × ARPA moyen</div>
-      </div>
-      <div style="height:1px;background:rgba(255,255,255,.07)"></div>
-      <div>
-        <div class="m-tag">ARR cible M60</div>
-        <div class="m-val w">3,9<span>M€</span></div>
-        <div class="m-sub">MRR 325 K€ × 12 — Scénario base</div>
+      <div style="margin-top:20px;background:rgba(14,124,123,.12);border:1px solid rgba(14,124,123,.25);border-radius:10px;padding:14px 16px;">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Modèle tarifaire</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.7;">
+          Un abonnement mensuel par établissement, adapté à sa taille.<br>
+          Structures individuelles : 350 → 480 €/mois<br>
+          Groupes (dégressif) : 310 → 390 €/structure<br>
+          <span style="color:var(--teal-m);font-weight:600;">Sans limite d'utilisateurs. Sans coût caché.</span>
+        </div>
       </div>
     </div>
-    <div class="market-seg">
-      <div class="seg">
-        <div class="seg-icon">🏥</div>
-        <div style="flex:1">
-          <div class="seg-name">EHPAD & Résidences seniors</div>
-          <div class="seg-count">7 500 structures · Cœur de cible hébergement</div>
-          <div class="seg-bar-wrap"><div class="seg-bar" style="width:70%"></div></div>
-        </div>
-      </div>
-      <div class="seg">
-        <div class="seg-icon">🏠</div>
-        <div style="flex:1">
-          <div class="seg-name">SAD / SAAD / SSIAD</div>
-          <div class="seg-count">15 000 structures · Marché domicile prioritaire</div>
-          <div class="seg-bar-wrap"><div class="seg-bar" style="width:85%;background:var(--orange)"></div></div>
-        </div>
-      </div>
-      <div class="seg">
-        <div class="seg-icon">🏗️</div>
-        <div style="flex:1">
-          <div class="seg-name">FAM / IME / HAD</div>
-          <div class="seg-count">12 000 structures · Extension naturelle</div>
-          <div class="seg-bar-wrap"><div class="seg-bar" style="width:45%;background:#6366F1"></div></div>
-        </div>
-      </div>
-      <div class="seg">
-        <div class="seg-icon">🏛️</div>
-        <div style="flex:1">
-          <div class="seg-name">Réseaux & Groupes nationaux</div>
-          <div class="seg-count">200+ groupes · Cœur du modèle partenaires</div>
-          <div class="seg-bar-wrap"><div class="seg-bar" style="width:60%;background:#A78BFA"></div></div>
-        </div>
+    <div>
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Segments prioritaires</div>
+      <div class="market-seg">
+        <div class="seg"><div class="seg-icon">🏠</div><div style="flex:1"><div class="seg-name">SAD / SAAD / SSIAD</div><div class="seg-count">15 000 structures · Marché domicile prioritaire</div><div class="seg-bar-wrap"><div class="seg-bar" style="width:85%;background:var(--orange)"></div></div></div></div>
+        <div class="seg"><div class="seg-icon">🏥</div><div style="flex:1"><div class="seg-name">EHPAD & Résidences seniors</div><div class="seg-count">7 500 structures · Cœur de cible hébergement</div><div class="seg-bar-wrap"><div class="seg-bar" style="width:70%"></div></div></div></div>
+        <div class="seg"><div class="seg-icon">🏛️</div><div style="flex:1"><div class="seg-name">Réseaux & Groupes nationaux</div><div class="seg-count">200+ groupes · Effet levier maximal</div><div class="seg-bar-wrap"><div class="seg-bar" style="width:60%;background:#A78BFA"></div></div></div></div>
+        <div class="seg"><div class="seg-icon">🏗️</div><div style="flex:1"><div class="seg-name">FAM / IME / HAD</div><div class="seg-count">12 000 structures · Extension naturelle A3+</div><div class="seg-bar-wrap"><div class="seg-bar" style="width:40%;background:#6366F1"></div></div></div></div>
       </div>
     </div>
   </div>
-  <div class="slide-num">06 / 10</div>
+  <div class="slide-num">05 / 09</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
-<!-- ══ S06 — ÉQUIPE ══════════════════════════════════════════════ -->
+<!-- ══ S06 — ÉQUIPE ════════════════════════════════════════════════ -->
 <div class="slide dark" id="s06">
   <div class="eyebrow">Les fondateurs</div>
-  <div class="display" style="font-size:clamp(28px,3vw,42px);margin-bottom:6px;">La légitimité terrain<br><em>avant la levée.</em></div>
-  <div class="team-grid">
+  <div class="display" style="font-size:clamp(24px,2.8vw,38px);margin-bottom:6px;">En pré-seed, vous investissez<br><em>d'abord dans des personnes.</em></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px;position:relative;z-index:2;">
     <div class="t-card2 c1">
       <div class="t-avatar" style="background:var(--teal)">BM</div>
       <div class="t-name">Bertrand Mars</div>
       <div class="t-role">Co-fondateur · Directeur Général</div>
-      <div class="t-bio">15 ans d'expérience commerciale et stratégique dans le secteur. Construction de réseaux de partenaires, développement de solutions pour les structures de soins et d'hébergement. Connaissance intime des douleurs terrain des directeurs.</div>
+      <div class="t-bio" style="font-size:12px;line-height:1.65;color:rgba(255,255,255,.6);margin-bottom:14px;">15 ans d'expérience commerciale et stratégique dans le secteur. Construction et animation de réseaux de partenaires à l'échelle nationale. Développement de solutions auprès de groupes, associations et structures indépendantes. Connaissance fine des enjeux terrain — financiers, réglementaires, humains. Il a rencontré des centaines de directeurs. Il connaît leurs douleurs de l'intérieur.</div>
+      <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px;">
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.55);">
+          <span style="color:var(--teal-m);font-weight:700;">✓</span>Réseau de +200 contacts directs directeurs / DG / DO dans le secteur
+        </div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.55);">
+          <span style="color:var(--teal-m);font-weight:700;">✓</span>Relationnel fort auprès de groupes nationaux et régionaux
+        </div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.55);">
+          <span style="color:var(--teal-m);font-weight:700;">✓</span>15 ans de prospection, négociation et fidélisation terrain
+        </div>
+      </div>
       <div class="t-tags">
         <div class="t-tag">15 ans terrain</div>
         <div class="t-tag">Développement commercial</div>
-        <div class="t-tag">Réseaux de soins</div>
+        <div class="t-tag">Réseaux nationaux</div>
+        <div class="t-tag">Stratégie go-to-market</div>
       </div>
     </div>
     <div class="t-card2 c2">
       <div class="t-avatar" style="background:var(--orange)">OL</div>
       <div class="t-name">Olivier Lefebvre</div>
       <div class="t-role">Co-fondateur · Président</div>
-      <div class="t-bio">Directeur d'EHPAD en activité — il vit le problème chaque jour. Consultant ANAP, expert des exigences réglementaires. Président de FédéCRT — accès direct aux fédérations et réseaux qui constituent notre vecteur de déploiement.</div>
+      <div class="t-bio" style="font-size:12px;line-height:1.65;color:rgba(255,255,255,.6);margin-bottom:14px;">Directeur d'EHPAD en activité — il vit le problème chaque jour. Consultant ANAP, il connaît les exigences réglementaires de l'intérieur et travaille directement avec les agences régionales de santé. Président de FédéCRT, il siège aux côtés des fédérations et réseaux nationaux qui représentent des centaines de structures. Chaque fonctionnalité de NexiCare a été validée par son regard opérationnel.</div>
+      <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px;">
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.55);">
+          <span style="color:var(--orange);font-weight:700;">✓</span>Directeur EHPAD en exercice — légitimité terrain absolue
+        </div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.55);">
+          <span style="color:var(--orange);font-weight:700;">✓</span>Consultant ANAP — accès aux réformes et aux pilotes institutionnels
+        </div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.55);">
+          <span style="color:var(--orange);font-weight:700;">✓</span>Président FédéCRT — porte d'entrée aux fédérations et groupes
+        </div>
+      </div>
       <div class="t-tags">
         <div class="t-tag">Directeur EHPAD actif</div>
         <div class="t-tag">Consultant ANAP</div>
         <div class="t-tag">Président FédéCRT</div>
+        <div class="t-tag">Expert HAS & ARS</div>
       </div>
     </div>
   </div>
-  <div class="team-contrib">
-    <div class="tc-title">Apport en industrie — Phase MVP · 6 mois sans rémunération</div>
-    <div style="display:flex;gap:40px;align-items:center;flex-wrap:wrap;">
-      <div><div class="tc-val">96 000 €</div><div class="tc-desc">Apport comptable · 2 × 8 000 €/mois</div></div>
-      <div style="width:1px;height:36px;background:rgba(255,255,255,.09)"></div>
-      <div><div class="tc-val" style="font-size:20px;">Réseau · Légitimité · Terrain</div><div class="tc-desc">Pre-money 950K€ valorise l'ensemble de l'actif immatériel fondateurs</div></div>
-      <div style="width:1px;height:36px;background:rgba(255,255,255,.09)"></div>
-      <div><div class="tc-val">75% minimum</div><div class="tc-desc">Capital conservé post-levée</div></div>
+  <!-- Traction -->
+  <div style="margin-top:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:11px;padding:16px 20px;position:relative;z-index:2;">
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.28);margin-bottom:10px;">Traction & signaux d'intérêt</div>
+    <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:center;">
+      <div style="text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--teal-m);">15-20</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;">Structures pilotes<br>identifiées</div>
+      </div>
+      <div style="width:1px;height:40px;background:rgba(255,255,255,.09)"></div>
+      <div style="text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--orange);">LOI</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;">En attente de signature<br>de plusieurs groupes</div>
+      </div>
+      <div style="width:1px;height:40px;background:rgba(255,255,255,.09)"></div>
+      <div style="text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#fff;">200+</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;">Contacts directs<br>dans le réseau</div>
+      </div>
+      <div style="width:1px;height:40px;background:rgba(255,255,255,.09)"></div>
+      <div style="flex:1;min-width:200px;">
+        <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.6;font-style:italic;">"Nous n'avons pas construit un produit puis cherché un marché. Nous avons écouté le marché pendant 15 ans — et nous construisons ce qu'il nous a demandé."</div>
+      </div>
     </div>
   </div>
-  <div class="slide-num">07 / 10</div>
+  <div class="slide-num">06 / 09</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
-<!-- ══ S07 — MODÈLE ÉCO ══════════════════════════════════════════ -->
+<!-- ══ S07 — IMPACT ════════════════════════════════════════════════ -->
 <div class="slide cream-bg" id="s07">
-  <div class="eyebrow">Modèle économique</div>
-  <div class="display" style="font-size:clamp(26px,3vw,38px);margin-bottom:6px;">SaaS B2B vertical · Revenus récurrents.<br><em style="color:var(--teal)">Un tarif. Toutes les fonctionnalités.</em></div>
-  <div class="eco-grid">
-    <div>
-      <div style="font-size:11px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">Tarification hébergement</div>
-      <div class="pricing-row"><span class="pr-label">≤ 50 lits</span><span class="pr-price">379 €<span class="pr-sub"> HT/mois</span></span></div>
-      <div class="pricing-row hl"><span class="pr-label">51 à 80 lits · cœur de cible</span><span class="pr-price">419 €<span class="pr-sub"> HT/mois</span></span></div>
-      <div class="pricing-row"><span class="pr-label">81 à 120 lits</span><span class="pr-price">449 €<span class="pr-sub"> HT/mois</span></span></div>
-      <div class="pricing-row"><span class="pr-label">&gt;120 lits · Groupe</span><span class="pr-price">479 €<span class="pr-sub"> HT/mois</span></span></div>
-      <div style="margin-top:12px;font-size:11px;color:var(--grey);line-height:1.6;background:#fff;border-radius:7px;padding:10px 12px;border:1px solid rgba(0,0,0,.06);">
-        <strong style="color:var(--dark)">Domicile :</strong> 349→499 €/mois selon bénéficiaires actifs<br>
-        <strong style="color:var(--dark)">Groupes :</strong> 310-390 €/structure + setup one-shot 3K→30K€
-      </div>
+  <div class="eyebrow">Impact sociétal</div>
+  <div class="display" style="font-size:clamp(26px,3vw,40px);margin-bottom:6px;">Un outil meilleur pour les équipes.<br><em style="color:var(--teal)">Une prise en charge meilleure pour les personnes.</em></div>
+  <p style="font-size:14px;color:var(--grey);max-width:640px;line-height:1.65;font-weight:300;margin-bottom:28px;">NexiCare n'est pas seulement un outil de pilotage. C'est un levier direct sur la qualité de l'accompagnement des personnes — résidents, bénéficiaires, aidants.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(0,0,0,.07);box-shadow:0 3px 16px rgba(0,0,0,.05);">
+      <div style="font-size:28px;margin-bottom:12px;">⏱️</div>
+      <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:8px;">Plus de temps pour l'accompagnement</div>
+      <div style="font-size:12px;color:var(--grey);line-height:1.65;">Chaque heure récupérée sur la re-saisie, la recherche d'information et la compilation de rapports est une heure rendue au terrain — au contact direct avec les personnes accompagnées.</div>
     </div>
-    <div class="eco-kpi">
-      <div class="eco-kpi-title">Métriques SaaS clés</div>
-      <div class="eco-kpi-row">
-        <div class="eco-kpi-item"><span class="eki-label">Churn mensuel cible</span><span class="eki-val t">0,3%</span></div>
-        <div class="eco-kpi-item"><span class="eki-label">ARPA groupe moyen</span><span class="eki-val">355 €/struct</span></div>
-        <div class="eco-kpi-item"><span class="eki-label">ARPA individuel</span><span class="eki-val">415 €/mois</span></div>
-        <div class="eco-kpi-item"><span class="eki-label">LTV estimée (36 mois)</span><span class="eki-val o">&gt; 15 000 €</span></div>
-        <div class="eco-kpi-item"><span class="eki-label">CAC estimé</span><span class="eki-val t">&lt; 800 €</span></div>
-        <div class="eco-kpi-item"><span class="eki-label">LTV / CAC</span><span class="eki-val">× 19</span></div>
-      </div>
+    <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(0,0,0,.07);box-shadow:0 3px 16px rgba(0,0,0,.05);">
+      <div style="font-size:28px;margin-bottom:12px;">🤝</div>
+      <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:8px;">Des familles mieux informées</div>
+      <div style="font-size:12px;color:var(--grey);line-height:1.65;">Le portail famille intégré réduit l'anxiété des proches et améliore la confiance dans l'établissement. Des familles rassurées, c'est des équipes qui reçoivent moins d'appels — et plus de soutien.</div>
+    </div>
+    <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(0,0,0,.07);box-shadow:0 3px 16px rgba(0,0,0,.05);">
+      <div style="font-size:28px;margin-bottom:12px;">📋</div>
+      <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:8px;">Une conformité sans stress</div>
+      <div style="font-size:12px;color:var(--grey);line-height:1.65;">Les 18 critères HAS tracés en continu, les indicateurs ANAP calculés automatiquement. Les équipes qualité peuvent se concentrer sur l'amélioration réelle — pas sur la reconstitution de preuves.</div>
+    </div>
+    <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(0,0,0,.07);box-shadow:0 3px 16px rgba(0,0,0,.05);">
+      <div style="font-size:28px;margin-bottom:12px;">😊</div>
+      <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:8px;">Des équipes qui restent</div>
+      <div style="font-size:12px;color:var(--grey);line-height:1.65;">Le turn-over dans le secteur est structurellement lié à la surcharge administrative. Des outils simples, ergonomiques et adaptés au métier participent directement à la fidélisation des professionnels.</div>
+    </div>
+    <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(0,0,0,.07);box-shadow:0 3px 16px rgba(0,0,0,.05);">
+      <div style="font-size:28px;margin-bottom:12px;">⚡</div>
+      <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:8px;">Des admissions plus rapides</div>
+      <div style="font-size:12px;color:var(--grey);line-height:1.65;">Un pipeline d'admission fluide, c'est des délais réduits pour les personnes en attente de prise en charge — souvent dans des situations de vulnérabilité. Chaque jour gagné compte.</div>
+    </div>
+    <div style="background:var(--teal);border-radius:14px;padding:24px;">
+      <div style="font-size:28px;margin-bottom:12px;">🎯</div>
+      <div style="font-size:15px;font-weight:600;color:#fff;margin-bottom:8px;">Notre conviction</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.65;">La qualité de vie des personnes accompagnées ne peut progresser que si ceux qui les accompagnent travaillent dans de bonnes conditions. NexiCare améliore les deux simultanément.</div>
     </div>
   </div>
-  <div class="slide-num">08 / 10</div>
+  <div class="slide-num">07 / 09</div>
   <div class="confidential-badge" style="color:var(--grey)">Confidentiel</div>
 </div>
 
-<!-- ══ S08 — BP RÉSUMÉ ═══════════════════════════════════════════ -->
+<!-- ══ S08 — BP & FINANCEMENT ══════════════════════════════════════ -->
 <div class="slide dark" id="s08">
-  <div class="eyebrow">Projections financières · Scénario base</div>
-  <div class="display" style="font-size:clamp(26px,3vw,38px);margin-bottom:6px;">Break-even M24. ARR 3,9 M€ à 5 ans.<br><em>EBITDA 58,6% en régime de croisière.</em></div>
-  <div class="bp-grid">
-    <div class="bp-kpis">
-      <div class="bp-kpi"><span class="bp-kpi-lbl">Break-even opérationnel</span><span class="bp-kpi-val o">M24</span></div>
-      <div class="bp-kpi"><span class="bp-kpi-lbl">Structures M60</span><span class="bp-kpi-val t">913</span></div>
-      <div class="bp-kpi"><span class="bp-kpi-lbl">MRR M60</span><span class="bp-kpi-val">325 K€</span></div>
-      <div class="bp-kpi"><span class="bp-kpi-lbl">ARR M60</span><span class="bp-kpi-val t">3,9 M€</span></div>
-      <div class="bp-kpi"><span class="bp-kpi-lbl">Total revenus 5 ans</span><span class="bp-kpi-val">6,4 M€</span></div>
+  <div class="eyebrow">Projections financières & Financement</div>
+  <div class="display" style="font-size:clamp(24px,2.8vw,36px);margin-bottom:18px;">Break-even M24. ARR 3,9 M€ à M60.<br><em>Une seule levée suffit.</em></div>
+  <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:36px;align-items:start;position:relative;z-index:2;">
+
+    <!-- KPIs + financement -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:2px;">Métriques clés</div>
+      <div class="bp-kpi"><span class="bp-kpi-lbl">Break-even opérationnel</span><span class="bp-kpi-val o">M24 · 101 structures</span></div>
+      <div class="bp-kpi"><span class="bp-kpi-lbl">ARR cible M60</span><span class="bp-kpi-val t">3,9 M€ · 913 structures</span></div>
+      <div class="bp-kpi"><span class="bp-kpi-lbl">ARPA moyen global</span><span class="bp-kpi-val">385 €/struct/mois</span></div>
       <div class="bp-kpi"><span class="bp-kpi-lbl">EBITDA 5 ans</span><span class="bp-kpi-val g">3,7 M€ · 58,6%</span></div>
+      <div style="height:1px;background:rgba(255,255,255,.08);margin:4px 0;"></div>
+      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:2px;">Structure de financement</div>
+      <div style="background:rgba(255,255,255,.06);border-radius:9px;padding:12px 14px;">
+        <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:8px;">CAPEX développement (Neoria)</div>
+        <div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:12px;">195 000 €</div>
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <div style="display:flex;justify-content:space-between;font-size:11px;">
+            <span style="color:rgba(255,255,255,.55);">Investisseurs pré-seed</span>
+            <span style="color:var(--orange);font-weight:700;">200–250 K€ · dilutif</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;">
+            <span style="color:rgba(255,255,255,.55);">BPI Prêt d'honneur</span>
+            <span style="color:var(--teal-m);font-weight:600;">50 K€ · non dilutif</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;">
+            <span style="color:rgba(255,255,255,.55);">BPI PTI / Prêt Numérique</span>
+            <span style="color:var(--teal-m);font-weight:600;">100 K€ · non dilutif</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;">
+            <span style="color:rgba(255,255,255,.55);">BPI Émergence + Région BFC</span>
+            <span style="color:var(--teal-m);font-weight:600;">80 K€ · non dilutif</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;">
+            <span style="color:rgba(255,255,255,.55);">CII + French Tech Santé</span>
+            <span style="color:var(--teal-m);font-weight:600;">50 K€ · non dilutif</span>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:6px;margin-top:2px;display:flex;justify-content:space-between;font-size:12px;font-weight:700;">
+            <span style="color:rgba(255,255,255,.7);">Total non dilutif visé</span>
+            <span style="color:var(--teal-m);">≥ 280 K€</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:rgba(14,124,123,.12);border:1px solid rgba(14,124,123,.25);border-radius:9px;padding:11px 13px;font-size:12px;color:rgba(255,255,255,.7);line-height:1.6;">
+        <strong style="color:var(--teal-m);">Une seule levée planifiée.</strong> Le modèle est conçu pour atteindre le break-even à M24 sans seconde levée de fonds — sauf refus significatif des subventions non dilutives, auquel cas un complément pourrait être envisagé.
+      </div>
     </div>
+
+    <!-- Graphique + exit -->
     <div>
       <div class="chart-area">
-        <div class="chart-title">CA mensuel — M7 à M60</div>
+        <div class="chart-title">CA mensuel — trajectoire M7 à M60</div>
         <div class="chart-bars">
           <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:2%;background:rgba(14,124,123,.3)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.3)">3K</div><div class="chart-bar-lbl">M7</div></div>
-          <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:4%;background:rgba(14,124,123,.35)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.3)">10K</div><div class="chart-bar-lbl">M12</div></div>
-          <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:8%;background:rgba(14,124,123,.45)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.4)">26K</div><div class="chart-bar-lbl">M24</div></div>
-          <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:23%;background:rgba(14,124,123,.6)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.55)">75K</div><div class="chart-bar-lbl">M30</div></div>
-          <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:34%;background:rgba(14,124,123,.7)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.6)">111K</div><div class="chart-bar-lbl">M36</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:4%;background:rgba(14,124,123,.35)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.35)">10K</div><div class="chart-bar-lbl">M12</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:8%;background:rgba(14,124,123,.45)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.4)">26K</div><div class="chart-bar-lbl">M24 ★</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:28%;background:rgba(14,124,123,.6)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.55)">90K</div><div class="chart-bar-lbl">M30</div></div>
+          <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:43%;background:rgba(14,124,123,.7)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.65)">140K</div><div class="chart-bar-lbl">M36</div></div>
           <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:69%;background:var(--teal)"></div><div class="chart-bar-val" style="color:rgba(255,255,255,.8)">224K</div><div class="chart-bar-lbl">M48</div></div>
           <div class="chart-bar-wrap"><div class="chart-bar-fill" style="height:100%;background:var(--orange)"></div><div class="chart-bar-val" style="color:var(--orange);font-weight:700">325K</div><div class="chart-bar-lbl">M60</div></div>
         </div>
         <table class="annual-table">
           <tr><th>Année</th><th>CA</th><th>EBITDA</th><th>Structures</th></tr>
-          <tr><td>A1 M1-M12</td><td>34 K€</td><td class="neg">(229 K€)</td><td>21</td></tr>
-          <tr><td>A2 M13-M24</td><td>298 K€</td><td class="neg">(155 K€)</td><td>101</td></tr>
-          <tr><td>A3 M25-M36</td><td>850 K€</td><td class="pos">+374 K€</td><td>252</td></tr>
-          <tr><td>A4 M37-M48</td><td>1 850 K€</td><td class="pos">+1 213 K€</td><td>545</td></tr>
-          <tr><td>A5 M49-M60</td><td>3 348 K€</td><td class="pos">+2 338 K€</td><td>913</td></tr>
+          <tr><td>A1</td><td>34 K€</td><td class="neg">(229 K€)</td><td>21</td></tr>
+          <tr><td>A2</td><td>298 K€</td><td class="neg">(155 K€)</td><td>101</td></tr>
+          <tr><td>A3</td><td>850 K€</td><td class="pos">+374 K€</td><td>252</td></tr>
+          <tr><td>A4</td><td>1 850 K€</td><td class="pos">+1 213 K€</td><td>545</td></tr>
+          <tr><td>A5</td><td>3 348 K€</td><td class="pos">+2 338 K€</td><td>913</td></tr>
         </table>
+      </div>
+      <!-- Exit -->
+      <div style="margin-top:14px;background:rgba(224,123,57,.1);border:1px solid rgba(224,123,57,.25);border-radius:11px;padding:14px 16px;">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.3);margin-bottom:8px;">Exit envisagé · Horizon 5-7 ans</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+          <div style="text-align:center;background:rgba(255,255,255,.06);border-radius:7px;padding:9px 6px;">
+            <div style="font-size:9px;color:rgba(255,255,255,.4);margin-bottom:4px;text-transform:uppercase;">Cession industriel</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:900;color:rgba(255,255,255,.7);">Éditeur SaaS santé</div>
+          </div>
+          <div style="text-align:center;background:rgba(224,123,57,.2);border:1px solid rgba(224,123,57,.4);border-radius:7px;padding:9px 6px;">
+            <div style="font-size:9px;color:rgba(255,255,255,.6);margin-bottom:4px;text-transform:uppercase;">Valo estimée ×8 ARR</div>
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#fff;">31 M€</div>
+            <div style="font-size:9px;color:rgba(255,255,255,.5);">scénario base</div>
+          </div>
+          <div style="text-align:center;background:rgba(255,255,255,.06);border-radius:7px;padding:9px 6px;">
+            <div style="font-size:9px;color:rgba(255,255,255,.4);margin-bottom:4px;text-transform:uppercase;">Rachat par groupe</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:900;color:rgba(255,255,255,.7);">Opérateur secteur</div>
+          </div>
+        </div>
+        <div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,.4);text-align:center;">ROI investisseur estimé : ×19 (prudent) · ×31 (base) · ×39 (optimiste) · sur ticket de 30 000 €</div>
       </div>
     </div>
   </div>
-  <div class="slide-num">09 / 10</div>
+  <div class="slide-num">08 / 09</div>
   <div class="confidential-badge">Confidentiel</div>
 </div>
 
 <!-- ══ S09 — OFFRE + CONTACT ════════════════════════════════════ -->
 <div class="slide dark" id="s09">
   <div class="eyebrow" style="color:var(--orange)">Levée pré-seed · 2026</div>
-  <div class="display" style="color:#fff;font-size:clamp(24px,2.8vw,36px);margin-bottom:6px;">Minimum 30 000 € · ~3% à 5% par ticket.<br><em style="color:var(--teal-m)">5 à 7 investisseurs · ~ 25% max · Pre-money 950 K€.</em></div>
+  <div class="display" style="color:#fff;font-size:clamp(24px,2.8vw,36px);margin-bottom:6px;">30 000 € min · ~2,5% par ticket.<br><em style="color:var(--teal-m)">4 à 6 investisseurs · ~21% max · Pre-money 950 K€.</em></div>
   <div class="offer-grid">
     <div class="inv-cards">
       <div class="inv-card accent"><span class="inv-label">Ticket minimum</span><span class="inv-val t">30 000 €</span></div>
-      <div class="inv-card accent"><span class="inv-label">% par ticket de 30 K€</span><span class="inv-val t">~3%</span></div>
-      <div class="inv-card"><span class="inv-label">Nombre d'investisseurs</span><span class="inv-val">5 · 7 (max)</span></div>
-      <div class="inv-card"><span class="inv-label">Total levé (dilutif)</span><span class="inv-val">180→250 K€</span></div>
+      <div class="inv-card accent"><span class="inv-label">% par ticket (base 30 K€)</span><span class="inv-val t">~2,5%</span></div>
+      <div class="inv-card"><span class="inv-label">Nombre d'investisseurs</span><span class="inv-val">4 (min) · 6 (max)</span></div>
+      <div class="inv-card"><span class="inv-label">Total levé (dilutif)</span><span class="inv-val">200→250 K€</span></div>
       <div class="inv-card"><span class="inv-label">Valorisation pre-money</span><span class="inv-val">950 000 €</span></div>
-      <div class="inv-card"><span class="inv-label">Valorisation post-money</span><span class="inv-val">1 000 K€</span></div>
+      <div class="inv-card"><span class="inv-label">Valorisation post-money</span><span class="inv-val">1 150→1 200 K€</span></div>
       <div class="inv-card"><span class="inv-label">Apport industrie fondateurs</span><span class="inv-val o">96 000 €</span></div>
       <div class="inv-card"><span class="inv-label">Financement non dilutif (BPI/BFC/CII)</span><span class="inv-val t">280 K€</span></div>
     </div>
     <div class="offer-right">
       <div class="cap-table">
-        <div class="ct2-title">Cap table post-levée (scénario 5 investisseurs)</div>
+        <div class="ct2-title">Cap table post-levée (scénario 6 investisseurs)</div>
         <div class="ct2-row">
           <span class="ct2-label">Bertrand Mars — DG</span>
           <div class="ct2-track"><div class="ct2-fill" style="width:39.6%;background:var(--teal)"></div></div>
-          <span class="ct2-pct">~32,5%</span>
+          <span class="ct2-pct">~39,6%</span>
         </div>
         <div class="ct2-row">
           <span class="ct2-label">Olivier Lefebvre — Président</span>
           <div class="ct2-track"><div class="ct2-fill" style="width:39.6%;background:var(--orange)"></div></div>
-          <span class="ct2-pct">~32,5%</span>
+          <span class="ct2-pct">~39,6%</span>
         </div>
         <div class="ct2-row">
-          <span class="ct2-label">5 investisseurs (~5% chacun)</span>
+          <span class="ct2-label">4→6 investisseurs (~2,5% / tranche 30 K€)</span>
           <div class="ct2-track"><div class="ct2-fill" style="width:20.8%;background:#A78BFA"></div></div>
-          <span class="ct2-pct">~25%</span>
+          <span class="ct2-pct">~20,8%</span>
         </div>
       </div>
       <div class="roi-box">
-        <div class="roi-title">ROI estimé par ticket de 50 000 € · ARR M60 × multiple</div>
+        <div class="roi-title">ROI estimé par ticket de 30 000 € · ARR M60 × multiple</div>
         <div class="roi-row">
           <div class="roi-item">
             <div class="roi-lbl">Prudent ×5</div>
             <div class="roi-num">×19</div>
-            <div class="roi-sub">sur 50 000 €</div>
+            <div class="roi-sub">sur 30 000 €</div>
           </div>
           <div class="roi-item hl">
             <div class="roi-lbl">Base ×8</div>
             <div class="roi-num">×31</div>
-            <div class="roi-sub">sur 50 000 €</div>
+            <div class="roi-sub">sur 30 000 €</div>
           </div>
           <div class="roi-item">
             <div class="roi-lbl">Optimiste ×10</div>
             <div class="roi-num">×39</div>
-            <div class="roi-sub">sur 50 000 €</div>
+            <div class="roi-sub">sur 30 000 €</div>
           </div>
         </div>
-        <div class="roi-desc">ARR M60 = 3,9 M€ · Part ~5% par ticket / post-money 1 000 K€</div>
+        <div class="roi-desc">ARR M60 = 3,9 M€ · Part ~2,5% par ticket / post-money ~1 175 K€ moy.</div>
       </div>
     </div>
   </div>
@@ -1137,7 +1013,7 @@ em{font-style:italic;}
       </div>
     </div>
   </div>
-  <div class="slide-num">10 / 10</div>
+  <div class="slide-num">09 / 09</div>
 </div>
 
 <button class="print-btn" onclick="window.print()">🖨️ Exporter en PDF</button>
@@ -1464,7 +1340,7 @@ function closeFeat() {
   document.body.style.overflow = "";
 }
 
-const BP_URL = "https://docs.google.com/spreadsheets/d/1VH9S8CoGXjEvd30j-atsa_bN8jpA347l/edit?gid=1456336320#gid=1456336320";
+const BP_URL = "https://docs.google.com/spreadsheets/d/1GjKzv7Ouye07gwxCWIyNafaubL3ZD0BL/edit?gid=396696644#gid=396696644";
 function openBpLead(){const m=document.getElementById('bp-lead-modal');if(!m)return;m.style.display='flex';requestAnimationFrame(()=>m.classList.add('open'));document.body.style.overflow='hidden';}
 function closeBpLead(){const m=document.getElementById('bp-lead-modal');if(!m)return;m.classList.remove('open');setTimeout(()=>{if(!m.classList.contains('open'))m.style.display='none';},260);document.body.style.overflow='';}
 async function handleBpLead(e){e.preventDefault();const btn=document.getElementById('bp-submit-btn');btn.disabled=true;btn.innerHTML='<span>⏳</span> Envoi…';const form=document.getElementById('bp-lead-form');try{await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});}catch(err){}window.open(BP_URL,'_blank');form.style.display='none';document.getElementById('bp-success').style.display='block';setTimeout(closeBpLead,4500);}
