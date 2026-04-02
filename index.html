@@ -229,6 +229,30 @@ em{font-style:italic;}
 .ns-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--teal-m);margin-bottom:4px;}
 .ns-lbl{font-size:10px;color:rgba(255,255,255,.45);line-height:1.4;}
 
+/* ── LEAD GATE ── */
+.lead-overlay{position:fixed;inset:0;background:rgba(10,20,40,.9);z-index:2000;display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .25s ease;}
+.lead-overlay.open{display:flex;opacity:1;}
+.lead-box{background:#fff;border-radius:18px;width:100%;max-width:420px;box-shadow:0 36px 72px rgba(0,0,0,.4);overflow:hidden;transform:translateY(14px) scale(.97);transition:transform .3s ease;}
+.lead-overlay.open .lead-box{transform:translateY(0) scale(1);}
+.lead-hdr{background:var(--navy-d);padding:24px 26px 20px;position:relative;}
+.lead-hdr-eye{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);font-weight:600;margin-bottom:7px;}
+.lead-hdr-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:900;color:#fff;margin-bottom:3px;}
+.lead-hdr-sub{font-size:11px;color:rgba(255,255,255,.45);}
+.lead-close{position:absolute;top:13px;right:13px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,.55);}
+.lead-bdy{padding:22px 26px 26px;}
+.lead-row2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:9px;}
+.lead-field{display:flex;flex-direction:column;gap:4px;margin-bottom:9px;}
+.lead-field label{font-size:10px;font-weight:700;color:var(--dark);}
+.lead-field input{padding:9px 11px;border:1.5px solid #E5E7EB;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--dark);outline:none;background:#FAFAFA;transition:border-color .2s;}
+.lead-field input:focus{border-color:var(--teal);background:#fff;}
+.lead-submit{width:100%;padding:12px;background:var(--teal);color:#fff;border:none;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;}
+.lead-submit:disabled{background:#9CA3AF;cursor:not-allowed;}
+.lead-note{text-align:center;font-size:9px;color:#9CA3AF;margin-top:8px;}
+.lead-success{display:none;text-align:center;padding:26px 18px;}
+.lead-success-icon{font-size:40px;margin-bottom:10px;}
+.lead-success-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:900;color:var(--dark);margin-bottom:7px;}
+.lead-success-sub{font-size:12px;color:var(--grey);line-height:1.6;}
+
 /* ── PRINT ── */
 *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important;}
 @page{size:A4 landscape;margin:0;}
@@ -283,31 +307,159 @@ em{font-style:italic;}
 .mobile-nav-hint{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(10,20,40,.95);padding:9px 16px;z-index:998;align-items:center;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.07);}
 .mobile-nav-hint span{color:rgba(255,255,255,.7);font-weight:600;}
 @media(max-width:768px){
-  .slide{padding:28px 22px;min-height:auto;scroll-snap-align:start;}
+  /* ── Base slides ── */
+  .slide{padding:24px 18px 60px;min-height:auto;scroll-snap-align:start;}
   body{scroll-snap-type:y mandatory;overflow-y:scroll;}
-  .cover-inner{grid-template-columns:1fr;grid-template-rows:auto auto;}
+
+  /* ── Cover S01 ── */
+  .cover-inner{grid-template-columns:1fr;}
   .cover-right{display:none;}
-  .cover-left{padding:36px 22px 18px;}
-  .cover-title{font-size:34px !important;}
-  .cover-sub{font-size:13px !important;}
-  .cover-founders{padding:14px 22px;flex-direction:column;gap:14px;}
+  .cover-left{padding:32px 18px 18px;}
+  .cover-title{font-size:30px !important;margin-bottom:16px;}
+  .cover-sub{font-size:13px !important;margin-bottom:18px;}
+  .cover-founders{padding:14px 18px;flex-direction:column;gap:12px;}
   .cf-sep{display:none;}
   .cf-raise{margin-left:0;text-align:left;}
-  .prob-grid,.sol-grid,.market-grid,.eco-grid,.bp-grid,.offer-grid,.team-grid{grid-template-columns:1fr !important;gap:22px !important;}
-  .timing-grid{grid-template-columns:1fr !important;}
-  .features-grid{grid-template-columns:1fr 1fr !important;}
-  .display{font-size:24px !important;}
-  .prob-stat{font-size:64px !important;}
-  .contact-strip{flex-direction:column;align-items:flex-start;gap:14px;}
-  .contact-founders{flex-direction:column;gap:14px;}
+  .cf-raise-num{font-size:22px;}
+
+  /* ── Titres display ── */
+  .display{font-size:22px !important;line-height:1.15 !important;}
+  .eyebrow{font-size:10px !important;margin-bottom:10px !important;}
+  .prob-stat{font-size:56px !important;}
+
+  /* ── S02 Problème : 2 colonnes → 1 ── */
+  .prob-main-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:18px !important;
+  }
+
+  /* ── S03 Solution : grilles internes ── */
+  .sol-main-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:20px !important;
+  }
+  .features-grid{grid-template-columns:1fr 1fr !important;gap:8px !important;}
+  .sol-pills{gap:5px !important;}
+
+  /* ── S04 Timing ── */
+  .timing-grid{grid-template-columns:1fr !important;gap:12px !important;margin-top:18px !important;}
+  .t-card{padding:18px !important;}
+  .t-year{font-size:30px !important;}
+
+  /* ── S05 Marché : 2 colonnes → 1 ── */
+  .market-main-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:20px !important;
+  }
+  .market-seg{gap:7px !important;}
+  .seg{padding:9px 12px !important;}
+  .m-val{font-size:36px !important;}
+
+  /* ── S06 Équipe ── */
+  .team-grid{grid-template-columns:1fr !important;gap:16px !important;margin-top:16px !important;}
+  .t-card2{padding:20px !important;}
+  .t-avatar{width:46px;height:46px;font-size:16px;}
+  .t-name{font-size:18px !important;}
+  .t-bio{font-size:11px !important;}
+  .team-contrib > div[style*="display:flex"]{
+    flex-direction:column !important;
+    gap:12px !important;
+  }
+  .team-contrib > div > div[style*="width:1px"]{display:none !important;}
+
+  /* ── S07 Impact : 3 colonnes → 1 ── */
+  .impact-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+  }
+  #s07 > div > div[style*="border-radius:14px"]{
+    padding:16px !important;
+  }
+  #s07 > div > div > div:first-child{font-size:22px !important;}
+  #s07 > div > div > div:nth-child(2){font-size:13px !important;}
+  #s07 > div > div > div:nth-child(3){font-size:11px !important;}
+
+  /* ── S08 BP : grilles → 1 colonne, tableau scrollable ── */
+  .bp-main-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:20px !important;
+  }
+  .bp-kpis{gap:7px !important;}
+  .bp-kpi{padding:9px 12px !important;}
+  .bp-kpi-lbl{font-size:11px !important;}
+  .bp-kpi-val{font-size:15px !important;}
+  .chart-area{padding:14px !important;overflow:hidden;}
+  .chart-bars{height:70px !important;gap:3px !important;}
+  .chart-bar-val{font-size:7px !important;}
+  .chart-bar-lbl{font-size:7px !important;}
+
+  /* Tableau annuel scrollable horizontalement */
+  .chart-area > div:last-child{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .annual-table{min-width:320px;font-size:10px !important;}
+  .annual-table th,.annual-table td{padding:5px 7px !important;font-size:10px !important;}
+
+  /* Exit box : 3 colonnes → 1 */
+  .roi-row{grid-template-columns:1fr !important;gap:7px !important;}
+  .exit-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:7px !important;
+  }
+
+  /* Financement : flex vertical */
+  #s08 div[style*="display:flex;flex-direction:column;gap:5px"]{
+    gap:7px !important;
+  }
+
+  /* ── S09 Offre : 2 colonnes → 1 ── */
+  .offer-grid{grid-template-columns:1fr !important;gap:18px !important;margin-top:16px !important;}
+  .inv-cards{gap:7px !important;}
+  .inv-card{padding:9px 13px !important;}
+  .inv-label{font-size:11px !important;}
+  .inv-val{font-size:14px !important;}
+  .cap-table{padding:14px !important;}
+  .ct2-label{font-size:11px !important;}
+
+  /* Étapes contact → wrap */
+  .contact-strip{flex-direction:column;align-items:flex-start;gap:14px;margin-top:18px !important;padding-top:14px !important;}
+  .next-steps-row{flex-wrap:wrap;gap:7px !important;}
+  .ns-item{flex:none;width:calc(50% - 4px);padding:9px 10px !important;}
+  .ns-num{font-size:18px !important;}
+  .ns-lbl{font-size:9px !important;}
+  .contact-founders{flex-direction:column;gap:12px;}
   .cf2-sep{display:none;}
-  .next-steps-row{flex-wrap:wrap;}
+
+  /* CTA buttons */
+  .cta-btn{padding:10px 16px !important;font-size:12px !important;}
+
+  /* ── Modale features : plein écran ── */
+  .feat-overlay{padding:0 !important;}
+  .feat-modal{border-radius:0;max-height:100vh;height:100vh;}
+  .fm-header{padding:20px 20px 16px !important;}
+  .fm-title{font-size:18px !important;}
+  .fm-body{padding:16px 20px 24px !important;}
+  .fm-kpis{grid-template-columns:1fr 1fr !important;}
+  .fm-kpi-card-val{font-size:16px !important;}
+
+  /* ── UI commune ── */
   .mobile-nav-hint{display:flex !important;}
   .print-btn{bottom:50px !important;right:14px;padding:9px 14px;}
   .slide-label,.confidential-badge{display:none !important;}
   .slide-num{position:fixed !important;bottom:13px !important;left:14px !important;right:auto !important;font-size:10px !important;color:rgba(255,255,255,.28) !important;z-index:997;}
-  .slide{padding-top:28px !important;}
+  .slide{padding-top:24px !important;}
   #s01{padding-top:0 !important;}
+  .prob-main-grid,.sol-main-grid,.market-main-grid{display:flex !important;flex-direction:column !important;gap:18px !important;}
+  .impact-grid{grid-template-columns:1fr !important;}
+  .bp-main-grid{display:flex !important;flex-direction:column !important;gap:20px !important;}
+  .exit-grid{grid-template-columns:1fr 1fr !important;gap:7px !important;}
+  .team-contrib-inner{flex-direction:column !important;gap:12px !important;}
+  .team-contrib-inner > div[style*="width:1px"]{display:none !important;}
+
 }
 
 /* ── FEATURE MODALS ───────────────────────────────────────────── */
@@ -481,7 +633,7 @@ em{font-style:italic;}
   <div class="display" style="font-size:clamp(28px,3.2vw,44px);margin-bottom:28px;">
     40 000 structures. <em>Aucun cockpit.</em>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;position:relative;z-index:2;">
+  <div class="prob-main-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;position:relative;z-index:2;">
     <div>
       <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;">Ce que vivent les équipes chaque jour</div>
       <div style="display:flex;flex-direction:column;gap:10px;">
@@ -535,7 +687,7 @@ em{font-style:italic;}
 <div class="slide" id="s03">
   <div class="eyebrow" style="color:var(--teal-m)">NexiCare — La réponse</div>
   <div class="display" style="color:#fff;font-size:clamp(26px,3vw,40px);margin-bottom:6px;">Un seul outil. <em>Toutes les fonctionnalités essentielles.</em><br>Zéro remplacement. Zéro double saisie.</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:22px;position:relative;z-index:2;">
+  <div class="sol-main-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:22px;position:relative;z-index:2;">
 
     <!-- Gauche : fonctionnalités + à venir -->
     <div>
@@ -637,7 +789,7 @@ em{font-style:italic;}
 <div class="slide dark" id="s05">
   <div class="eyebrow">Le marché</div>
   <div class="display" style="font-size:clamp(28px,3.2vw,44px);margin-bottom:28px;">40 000 structures en France.<br><em>Un seul concurrent direct : personne.</em></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;position:relative;z-index:2;">
+  <div class="market-main-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;position:relative;z-index:2;">
     <div>
       <div style="display:flex;flex-direction:column;gap:20px;">
         <div>
@@ -685,7 +837,7 @@ em{font-style:italic;}
 <!-- ══ S06 — ÉQUIPE ════════════════════════════════════════════════ -->
 <div class="slide dark" id="s06">
   <div class="eyebrow">Les fondateurs</div>
-  <div class="display" style="font-size:clamp(24px,2.8vw,38px);margin-bottom:6px;">Réseau, légitimité, expertise métier. <br><em>Tout ce qu'un produit seul ne peut pas acheter.</em></div>
+  <div class="display" style="font-size:clamp(24px,2.8vw,38px);margin-bottom:6px;">Réseau, légitimité, expertise métier.<br><em>Tout ce qu'un produit seul ne peut pas acheter.</em></div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px;position:relative;z-index:2;">
     <div class="t-card2 c1">
       <div class="t-avatar" style="background:var(--teal)">BM</div>
@@ -767,7 +919,7 @@ em{font-style:italic;}
   <div class="eyebrow">Impact sociétal</div>
   <div class="display" style="font-size:clamp(26px,3vw,40px);margin-bottom:6px;">Un outil meilleur pour les équipes.<br><em style="color:var(--teal)">Une prise en charge meilleure pour les personnes.</em></div>
   <p style="font-size:14px;color:var(--grey);max-width:640px;line-height:1.65;font-weight:300;margin-bottom:28px;">NexiCare n'est pas seulement un outil de pilotage. C'est un levier direct sur la qualité de l'accompagnement des personnes — résidents, bénéficiaires, aidants.</p>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+  <div class="impact-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
     <div style="background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(0,0,0,.07);box-shadow:0 3px 16px rgba(0,0,0,.05);">
       <div style="font-size:28px;margin-bottom:12px;">⏱️</div>
       <div style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:8px;">Plus de temps pour l'accompagnement</div>
@@ -807,7 +959,7 @@ em{font-style:italic;}
 <div class="slide dark" id="s08">
   <div class="eyebrow">Projections financières & Financement</div>
   <div class="display" style="font-size:clamp(24px,2.8vw,36px);margin-bottom:18px;">Break-even M24. ARR 3,9 M€ à M60.<br><em>Une seule levée suffit.</em></div>
-  <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:36px;align-items:start;position:relative;z-index:2;">
+  <div class="bp-main-grid" style="display:grid;grid-template-columns:1fr 1.3fr;gap:36px;align-items:start;position:relative;z-index:2;">
 
     <!-- KPIs + financement -->
     <div style="display:flex;flex-direction:column;gap:10px;">
@@ -878,7 +1030,7 @@ em{font-style:italic;}
       <!-- Exit -->
       <div style="margin-top:14px;background:rgba(224,123,57,.1);border:1px solid rgba(224,123,57,.25);border-radius:11px;padding:14px 16px;">
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.3);margin-bottom:8px;">Exit envisagé · Horizon 5-7 ans</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+        <div class="exit-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
           <div style="text-align:center;background:rgba(255,255,255,.06);border-radius:7px;padding:9px 6px;">
             <div style="font-size:9px;color:rgba(255,255,255,.4);margin-bottom:4px;text-transform:uppercase;">Cession industriel</div>
             <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:900;color:rgba(255,255,255,.7);">Éditeur SaaS santé</div>
@@ -969,7 +1121,7 @@ em{font-style:italic;}
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
       <a href="https://calendly.com/nexicare/30min" target="_blank" class="cta-btn cta-primary">Prendre RDV — 30 min</a>
       <a href="mailto:bertrand@stræm.com" class="cta-btn cta-secondary">bertrand@stræm.com</a>
-        </div>
+    </div>
     <div class="contact-founders">
       <div class="cf2">
         <div class="cf2-av" style="background:var(--teal)">BM</div>
